@@ -1,5 +1,5 @@
 Flow report for test
-Wed May 10 15:36:24 2017
+Thu May 11 14:43:17 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,22 +40,26 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Wed May 10 15:36:22 2017           ;
+; Flow Status                        ; Successful - Thu May 11 14:43:13 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test                                            ;
 ; Top-level Entity Name              ; test                                            ;
-; Family                             ; Cyclone II                                      ;
-; Device                             ; EP2C35F672C6                                    ;
-; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 60 / 33,216 ( < 1 % )                           ;
-;     Total combinational functions  ; 52 / 33,216 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 48 / 33,216 ( < 1 % )                           ;
+; Family                             ; Cyclone IV GX                                   ;
+; Total logic elements               ; 61 / 14,400 ( < 1 % )                           ;
+;     Total combinational functions  ; 52 / 14,400 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 48 / 14,400 ( < 1 % )                           ;
 ; Total registers                    ; 48                                              ;
-; Total pins                         ; 17 / 475 ( 4 % )                                ;
+; Total pins                         ; 17 / 81 ( 21 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                             ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                                  ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; Total memory bits                  ; 0 / 552,960 ( 0 % )                             ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0 / 2 ( 0 % )                                   ;
+; Total GXB Receiver Channel PMA     ; 0 / 2 ( 0 % )                                   ;
+; Total GXB Transmitter Channel PCS  ; 0 / 2 ( 0 % )                                   ;
+; Total GXB Transmitter Channel PMA  ; 0 / 2 ( 0 % )                                   ;
+; Total PLLs                         ; 0 / 3 ( 0 % )                                   ;
+; Device                             ; EP4CGX15BF14C6                                  ;
+; Timing Models                      ; Final                                           ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -64,27 +68,22 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2017 15:36:10 ;
+; Start date & time ; 05/11/2017 14:43:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; test                ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                       ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 44883559756270.149442337004008        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files                          ; --            ; --          ; --         ;
-+-------------------------------------+---------------------------------------+---------------+-------------+------------+
++-----------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 44883559756270.149450658110596 ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; --          ; Top        ;
++-------------------------------------+--------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -92,11 +91,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 529 MB              ; 00:00:02                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 778 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 458 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 441 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 572 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:06     ; 1.0                     ; 874 MB              ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 502 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 506 MB              ; 00:00:02                           ;
+; Total                     ; 00:00:12     ; --                      ; --                  ; 00:00:12                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
