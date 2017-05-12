@@ -1,34 +1,34 @@
 |test
 CLK => mult_cell:leftMostCell.clk
 CLK => mult_cell:secondCell.clk
-CLK => shiftb:BFF0.CLK
-CLK => shift_register:RES0.CLK
-a[0] => mult_cell:secondCell.A2
-a[1] => mult_cell:secondCell.A1
-a[2] => mult_cell:leftMostCell.A2
-a[3] => mult_cell:leftMostCell.A1
-b[0] => shiftb:BFF0.Lin[0]
-b[1] => shiftb:BFF0.Lin[1]
-b[2] => shiftb:BFF0.Lin[2]
-b[3] => shiftb:BFF0.Lin[3]
-result[0] <= shift_register:RES0.RES[0]
-result[1] <= shift_register:RES0.RES[1]
-result[2] <= shift_register:RES0.RES[2]
-result[3] <= shift_register:RES0.RES[3]
-result[4] <= shift_register:RES0.RES[4]
-result[5] <= shift_register:RES0.RES[5]
-result[6] <= shift_register:RES0.RES[6]
-result[7] <= shift_register:RES0.RES[7]
+CLK => listb:BFF0.clk
+CLK => shift_register:RES0.clk
+A[0] => mult_cell:secondCell.a2
+A[1] => mult_cell:secondCell.a1
+A[2] => mult_cell:leftMostCell.a2
+A[3] => mult_cell:leftMostCell.a1
+B[0] => listb:BFF0.L[0]
+B[1] => listb:BFF0.L[1]
+B[2] => listb:BFF0.L[2]
+B[3] => listb:BFF0.L[3]
+result[0] <= shift_register:RES0.res[0]
+result[1] <= shift_register:RES0.res[1]
+result[2] <= shift_register:RES0.res[2]
+result[3] <= shift_register:RES0.res[3]
+result[4] <= shift_register:RES0.res[4]
+result[5] <= shift_register:RES0.res[5]
+result[6] <= shift_register:RES0.res[6]
+result[7] <= shift_register:RES0.res[7]
 
 
 |test|mult_cell:leftMostCell
-A1 => n1.IN1
-A2 => n2.IN0
-Bin => n2.IN1
-Bin => dflipflop:flipflopB.d
-B <> B
-Sin => fulladder:fullAdder1.b
-Sout <= dflipflop:flipflopS.q
+a1 => nLeft.IN1
+a2 => nRight.IN0
+bIn => nRight.IN1
+bIn => dflipflop:flipflopB.d
+bff <> bff
+sIn => fulladder:fullAdder1.b
+sOut <= dflipflop:flipflopS.q
 clk => dflipflop:flipflopB.clk
 clk => dflipflop:flipflopC1.clk
 clk => dflipflop:flipflopC2.clk
@@ -61,34 +61,34 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |test|mult_cell:leftMostCell|fullAdder:fullAdder1
 a => s.IN0
-a => c_out.IN0
+a => cOut.IN0
 b => s.IN1
-b => c_out.IN1
-c_in => s.IN1
-c_in => c_out.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
-c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|mult_cell:leftMostCell|fullAdder:fullAdder2
 a => s.IN0
-a => c_out.IN0
+a => cOut.IN0
 b => s.IN1
-b => c_out.IN1
-c_in => s.IN1
-c_in => c_out.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
-c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|mult_cell:secondCell
-A1 => n1.IN1
-A2 => n2.IN0
-Bin => n2.IN1
-Bin => dflipflop:flipflopB.d
-B <> B
-Sin => fulladder:fullAdder1.b
-Sout <= dflipflop:flipflopS.q
+a1 => nLeft.IN1
+a2 => nRight.IN0
+bIn => nRight.IN1
+bIn => dflipflop:flipflopB.d
+bff <> bff
+sIn => fulladder:fullAdder1.b
+sOut <= dflipflop:flipflopS.q
 clk => dflipflop:flipflopB.clk
 clk => dflipflop:flipflopC1.clk
 clk => dflipflop:flipflopC2.clk
@@ -121,85 +121,85 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |test|mult_cell:secondCell|fullAdder:fullAdder1
 a => s.IN0
-a => c_out.IN0
+a => cOut.IN0
 b => s.IN1
-b => c_out.IN1
-c_in => s.IN1
-c_in => c_out.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
-c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |test|mult_cell:secondCell|fullAdder:fullAdder2
 a => s.IN0
-a => c_out.IN0
+a => cOut.IN0
 b => s.IN1
-b => c_out.IN1
-c_in => s.IN1
-c_in => c_out.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
 s <= s.DB_MAX_OUTPUT_PORT_TYPE
-c_out <= c_out.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|test|shiftB:BFF0
-Lin[0] => Mux0.IN3
-Lin[1] => Mux0.IN2
-Lin[2] => Mux0.IN1
-Lin[3] => Mux0.IN0
-Bout <= Bout~reg0.DB_MAX_OUTPUT_PORT_TYPE
-CLK => i[0].CLK
-CLK => i[1].CLK
-CLK => i[2].CLK
-CLK => i[3].CLK
-CLK => i[4].CLK
-CLK => i[5].CLK
-CLK => i[6].CLK
-CLK => i[7].CLK
-CLK => i[8].CLK
-CLK => i[9].CLK
-CLK => i[10].CLK
-CLK => i[11].CLK
-CLK => i[12].CLK
-CLK => i[13].CLK
-CLK => i[14].CLK
-CLK => i[15].CLK
-CLK => i[16].CLK
-CLK => i[17].CLK
-CLK => i[18].CLK
-CLK => i[19].CLK
-CLK => i[20].CLK
-CLK => i[21].CLK
-CLK => i[22].CLK
-CLK => i[23].CLK
-CLK => i[24].CLK
-CLK => i[25].CLK
-CLK => i[26].CLK
-CLK => i[27].CLK
-CLK => i[28].CLK
-CLK => i[29].CLK
-CLK => i[30].CLK
-CLK => i[31].CLK
-CLK => Bout~reg0.CLK
+|test|ListB:BFF0
+L[0] => Mux0.IN3
+L[1] => Mux0.IN2
+L[2] => Mux0.IN1
+L[3] => Mux0.IN0
+bOut <= bOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => i[0].CLK
+clk => i[1].CLK
+clk => i[2].CLK
+clk => i[3].CLK
+clk => i[4].CLK
+clk => i[5].CLK
+clk => i[6].CLK
+clk => i[7].CLK
+clk => i[8].CLK
+clk => i[9].CLK
+clk => i[10].CLK
+clk => i[11].CLK
+clk => i[12].CLK
+clk => i[13].CLK
+clk => i[14].CLK
+clk => i[15].CLK
+clk => i[16].CLK
+clk => i[17].CLK
+clk => i[18].CLK
+clk => i[19].CLK
+clk => i[20].CLK
+clk => i[21].CLK
+clk => i[22].CLK
+clk => i[23].CLK
+clk => i[24].CLK
+clk => i[25].CLK
+clk => i[26].CLK
+clk => i[27].CLK
+clk => i[28].CLK
+clk => i[29].CLK
+clk => i[30].CLK
+clk => i[31].CLK
+clk => bOut~reg0.CLK
 
 
 |test|shift_register:RES0
 d => dflipflop:flip0.d
-CLK => dflipflop:flip0.clk
-CLK => dflipflop:floop:6:FFi.clk
-CLK => dflipflop:floop:5:FFi.clk
-CLK => dflipflop:floop:4:FFi.clk
-CLK => dflipflop:floop:3:FFi.clk
-CLK => dflipflop:floop:2:FFi.clk
-CLK => dflipflop:floop:1:FFi.clk
-CLK => dflipflop:floop:0:FFi.clk
-RES[0] <= dflipflop:floop:0:FFi.q
-RES[1] <= dflipflop:floop:1:FFi.q
-RES[2] <= dflipflop:floop:2:FFi.q
-RES[3] <= dflipflop:floop:3:FFi.q
-RES[4] <= dflipflop:floop:4:FFi.q
-RES[5] <= dflipflop:floop:5:FFi.q
-RES[6] <= dflipflop:floop:6:FFi.q
-RES[7] <= dflipflop:flip0.q
+clk => dflipflop:flip0.clk
+clk => dflipflop:floop:6:FFi.clk
+clk => dflipflop:floop:5:FFi.clk
+clk => dflipflop:floop:4:FFi.clk
+clk => dflipflop:floop:3:FFi.clk
+clk => dflipflop:floop:2:FFi.clk
+clk => dflipflop:floop:1:FFi.clk
+clk => dflipflop:floop:0:FFi.clk
+res[0] <= dflipflop:floop:0:FFi.q
+res[1] <= dflipflop:floop:1:FFi.q
+res[2] <= dflipflop:floop:2:FFi.q
+res[3] <= dflipflop:floop:3:FFi.q
+res[4] <= dflipflop:floop:4:FFi.q
+res[5] <= dflipflop:floop:5:FFi.q
+res[6] <= dflipflop:floop:6:FFi.q
+res[7] <= dflipflop:flip0.q
 
 
 |test|shift_register:RES0|dflipflop:flip0

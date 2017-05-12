@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test
-Wed May 10 15:36:12 2017
+Thu May 11 14:43:03 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,11 +43,11 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 10 15:36:12 2017           ;
+; Analysis & Synthesis Status        ; Successful - Thu May 11 14:43:03 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test                                            ;
 ; Top-level Entity Name              ; test                                            ;
-; Family                             ; Cyclone II                                      ;
+; Family                             ; Cyclone IV GX                                   ;
 ; Total logic elements               ; 62                                              ;
 ;     Total combinational functions  ; 52                                              ;
 ;     Dedicated logic registers      ; 48                                              ;
@@ -56,6 +56,10 @@ applicable agreement for further details.
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
@@ -65,9 +69,8 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP2C35F672C6       ;                    ;
 ; Top-level entity name                                                      ; test               ; test               ;
-; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -106,12 +109,14 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -119,7 +124,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -156,74 +161,58 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                   ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
-; test.vhd                         ; yes             ; User VHDL File  ; C:/Users/riiss/VHDL/multiplier/test.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                             ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                ; Library ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
+; test.vhd                         ; yes             ; Auto-Found VHDL File  ; C:/Users/riiss/GIT/FirstYearProject/src/multiplier/test.vhd ;         ;
++----------------------------------+-----------------+-----------------------+-------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 62    ;
-;                                             ;       ;
-; Total combinational functions               ; 52    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 17    ;
-;     -- 3 input functions                    ; 2     ;
-;     -- <=2 input functions                  ; 33    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 22    ;
-;     -- arithmetic mode                      ; 30    ;
-;                                             ;       ;
-; Total registers                             ; 48    ;
-;     -- Dedicated logic registers            ; 48    ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 17    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 48    ;
-; Total fan-out                               ; 242   ;
-; Average fan-out                             ; 2.07  ;
-+---------------------------------------------+-------+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 17               ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; CLK~input        ;
+; Maximum fan-out          ; 48               ;
+; Total fan-out            ; 259              ;
+; Average fan-out          ; 1.93             ;
++--------------------------+------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                           ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |test                          ; 52 (0)            ; 48 (0)       ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |test                                             ; work         ;
-;    |mult_cell:leftMostCell|    ; 3 (1)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell                      ; work         ;
-;       |dflipflop:flipflopB|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopB  ; work         ;
-;       |dflipflop:flipflopC2|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopC2 ; work         ;
-;       |dflipflop:flipflopS|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopS  ; work         ;
-;       |fullAdder:fullAdder2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|fullAdder:fullAdder2 ; work         ;
-;    |mult_cell:secondCell|      ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell                        ; work         ;
-;       |dflipflop:flipflopB|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopB    ; work         ;
-;       |dflipflop:flipflopC1|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopC1   ; work         ;
-;       |dflipflop:flipflopC2|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopC2   ; work         ;
-;       |dflipflop:flipflopS|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopS    ; work         ;
-;       |fullAdder:fullAdder1|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|fullAdder:fullAdder1   ; work         ;
-;       |fullAdder:fullAdder2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|fullAdder:fullAdder2   ; work         ;
-;    |shiftB:BFF0|               ; 44 (44)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shiftB:BFF0                                 ; work         ;
-;    |shift_register:RES0|       ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0                         ; work         ;
-;       |dflipflop:\floop:0:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:0:FFi  ; work         ;
-;       |dflipflop:\floop:1:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:1:FFi  ; work         ;
-;       |dflipflop:\floop:2:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:2:FFi  ; work         ;
-;       |dflipflop:\floop:3:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:3:FFi  ; work         ;
-;       |dflipflop:\floop:4:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:4:FFi  ; work         ;
-;       |dflipflop:\floop:5:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:5:FFi  ; work         ;
-;       |dflipflop:\floop:6:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:6:FFi  ; work         ;
-;       |dflipflop:flip0|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:flip0         ; work         ;
-+--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                       ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------+--------------+
+; |test                          ; 52 (0)            ; 48 (0)       ; 0           ; 0            ; 0       ; 0         ; 0         ; 17   ; 0            ; |test                                             ; work         ;
+;    |ListB:BFF0|                ; 44 (44)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                  ; work         ;
+;    |mult_cell:leftMostCell|    ; 3 (1)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell                      ; work         ;
+;       |dflipflop:flipflopB|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopB  ; work         ;
+;       |dflipflop:flipflopC2|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopC2 ; work         ;
+;       |dflipflop:flipflopS|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|dflipflop:flipflopS  ; work         ;
+;       |fullAdder:fullAdder2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:leftMostCell|fullAdder:fullAdder2 ; work         ;
+;    |mult_cell:secondCell|      ; 5 (1)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell                        ; work         ;
+;       |dflipflop:flipflopB|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopB    ; work         ;
+;       |dflipflop:flipflopC1|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopC1   ; work         ;
+;       |dflipflop:flipflopC2|   ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopC2   ; work         ;
+;       |dflipflop:flipflopS|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|dflipflop:flipflopS    ; work         ;
+;       |fullAdder:fullAdder1|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|fullAdder:fullAdder1   ; work         ;
+;       |fullAdder:fullAdder2|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|mult_cell:secondCell|fullAdder:fullAdder2   ; work         ;
+;    |shift_register:RES0|       ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0                         ; work         ;
+;       |dflipflop:\floop:0:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:0:FFi  ; work         ;
+;       |dflipflop:\floop:1:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:1:FFi  ; work         ;
+;       |dflipflop:\floop:2:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:2:FFi  ; work         ;
+;       |dflipflop:\floop:3:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:3:FFi  ; work         ;
+;       |dflipflop:\floop:4:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:4:FFi  ; work         ;
+;       |dflipflop:\floop:5:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:5:FFi  ; work         ;
+;       |dflipflop:\floop:6:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:6:FFi  ; work         ;
+;       |dflipflop:flip0|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:flip0         ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -257,7 +246,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+-------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                             ;
 +------+-------+----------+-------------------------------------------------------------------------------------+
-; b    ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; bff  ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; sin  ; Input ; Info     ; Stuck at GND                                                                        ;
 +------+-------+----------+-------------------------------------------------------------------------------------+
 
@@ -277,49 +266,41 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed May 10 15:36:10 2017
+    Info: Processing started: Thu May 11 14:43:00 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off multiplier -c test
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file multleft.vhd
-    Info (12022): Found design unit 1: multLeft-mult2
-    Info (12023): Found entity 1: multLeft
-Info (12021): Found 2 design units, including 1 entities, in source file halfadder.vhd
-    Info (12022): Found design unit 1: halfAdder-add
-    Info (12023): Found entity 1: halfAdder
-Info (12021): Found 2 design units, including 1 entities, in source file and2ab.vhd
-    Info (12022): Found design unit 1: and2ab-basic
-    Info (12023): Found entity 1: and2ab
-Info (12021): Found 12 design units, including 6 entities, in source file test.vhd
+Warning (12125): Using design file test.vhd, which is not specified as a design file for the current project, but contains definitions for 12 design units and 6 entities in project
     Info (12022): Found design unit 1: test-mult4
     Info (12022): Found design unit 2: mult_cell-mult2
     Info (12022): Found design unit 3: fullAdder-add
     Info (12022): Found design unit 4: shift_register-shiftRight
-    Info (12022): Found design unit 5: shiftB-shift
+    Info (12022): Found design unit 5: ListB-getB
     Info (12022): Found design unit 6: dflipflop-flip
     Info (12023): Found entity 1: test
     Info (12023): Found entity 2: mult_cell
     Info (12023): Found entity 3: fullAdder
     Info (12023): Found entity 4: shift_register
-    Info (12023): Found entity 5: shiftB
+    Info (12023): Found entity 5: ListB
     Info (12023): Found entity 6: dflipflop
 Info (12127): Elaborating entity "test" for the top level hierarchy
 Info (12129): Elaborating entity "mult_cell" using architecture "A:mult2" for hierarchy "mult_cell:leftMostCell"
 Info (12129): Elaborating entity "dflipflop" using architecture "A:flip" for hierarchy "mult_cell:leftMostCell|dflipflop:flipflopB"
 Info (12129): Elaborating entity "fullAdder" using architecture "A:add" for hierarchy "mult_cell:leftMostCell|fullAdder:fullAdder1"
-Info (12129): Elaborating entity "shiftB" using architecture "A:shift" for hierarchy "shiftB:BFF0"
-Warning (10540): VHDL Signal Declaration warning at test.vhd(173): used explicit default value for signal "Ltemp" because signal was never assigned a value
+Info (12129): Elaborating entity "ListB" using architecture "A:getb" for hierarchy "ListB:BFF0"
+Warning (10540): VHDL Signal Declaration warning at test.vhd(208): used explicit default value for signal "LTemp" because signal was never assigned a value
 Info (12129): Elaborating entity "shift_register" using architecture "A:shiftright" for hierarchy "shift_register:RES0"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Info (21057): Implemented 79 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 8 output pins
     Info (21061): Implemented 62 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 529 megabytes
-    Info: Processing ended: Wed May 10 15:36:12 2017
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 572 megabytes
+    Info: Processing ended: Thu May 11 14:43:03 2017
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 
