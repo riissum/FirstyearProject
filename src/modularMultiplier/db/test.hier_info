@@ -1,0 +1,303 @@
+|test
+CLK => modmultcell:stCell.clk
+CLK => modmultcell:ndCell.clk
+CLK => listb:BFF0.clk
+CLK => shift_register:RES0.clk
+A[0] => modmultcell:ndCell.a2
+A[1] => modmultcell:ndCell.a1
+A[2] => modmultcell:stCell.a2
+A[3] => modmultcell:stCell.a1
+B[0] => listb:BFF0.L[0]
+B[1] => listb:BFF0.L[1]
+B[2] => listb:BFF0.L[2]
+B[3] => listb:BFF0.L[3]
+M[0] => modmultcell:ndCell.m2
+M[1] => modmultcell:ndCell.m1
+M[2] => modmultcell:stCell.m2
+M[3] => modmultcell:stCell.m1
+RES[0] <= shift_register:RES0.res[0]
+RES[1] <= shift_register:RES0.res[1]
+RES[2] <= shift_register:RES0.res[2]
+RES[3] <= shift_register:RES0.res[3]
+bMoni <= listb:BFF0.bOut
+
+
+|test|modMultCell:stCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|test|modMultCell:stCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:stCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|test|modMultCell:ndCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|modMultCell:ndCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|ListB:BFF0
+L[0] => Mux0.IN3
+L[1] => Mux0.IN2
+L[2] => Mux0.IN1
+L[3] => Mux0.IN0
+bOut <= bOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+clk => i[0].CLK
+clk => i[1].CLK
+clk => i[2].CLK
+clk => i[3].CLK
+clk => i[4].CLK
+clk => i[5].CLK
+clk => i[6].CLK
+clk => i[7].CLK
+clk => i[8].CLK
+clk => i[9].CLK
+clk => i[10].CLK
+clk => i[11].CLK
+clk => i[12].CLK
+clk => i[13].CLK
+clk => i[14].CLK
+clk => i[15].CLK
+clk => i[16].CLK
+clk => i[17].CLK
+clk => i[18].CLK
+clk => i[19].CLK
+clk => i[20].CLK
+clk => i[21].CLK
+clk => i[22].CLK
+clk => i[23].CLK
+clk => i[24].CLK
+clk => i[25].CLK
+clk => i[26].CLK
+clk => i[27].CLK
+clk => i[28].CLK
+clk => i[29].CLK
+clk => i[30].CLK
+clk => i[31].CLK
+clk => bOut~reg0.CLK
+
+
+|test|shift_register:RES0
+d => dflipflop:flip0.d
+clk => dflipflop:flip0.clk
+clk => dflipflop:floop:2:FFi.clk
+clk => dflipflop:floop:1:FFi.clk
+clk => dflipflop:floop:0:FFi.clk
+res[0] <= dflipflop:floop:0:FFi.q
+res[1] <= dflipflop:floop:1:FFi.q
+res[2] <= dflipflop:floop:2:FFi.q
+res[3] <= dflipflop:flip0.q
+
+
+|test|shift_register:RES0|dflipflop:flip0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|shift_register:RES0|dflipflop:\floop:2:FFi
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|shift_register:RES0|dflipflop:\floop:1:FFi
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|test|shift_register:RES0|dflipflop:\floop:0:FFi
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
