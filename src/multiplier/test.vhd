@@ -244,3 +244,31 @@ BEGIN
          q <= d;                                               -- Then outputs d into q
    END PROCESS;
 END ARCHITECTURE flip;
+
+
+
+--         *** Hex Maker ***
+
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+
+ENTITY hexMaker IS
+	PORT (
+         N   :   IN     STD_LOGIC;
+         H   :   OUT    STD_LOGIC_VECTOR( 6 DOWNTO 0 )
+         );
+END hexMaker;
+
+ARCHITECTURE basic OF hexMaker IS
+   SIGNAL    P    :    STD_LOGIC_VECTOR( 6 DOWNTO 0 );
+BEGIN
+   PROCESS(N, P)
+   BEGIN
+      IF ( N = '0' ) THEN
+         P <= "1000000";
+      ELSIF ( N = '1' ) THEN
+         P <= "1111001";
+      END IF;
+   END PROCESS;
+   H <= P;
+END basic;

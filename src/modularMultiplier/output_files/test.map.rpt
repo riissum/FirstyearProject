@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test
-Fri May 12 15:24:13 2017
+Wed May 17 15:27:16 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -13,11 +13,17 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. General Register Statistics
- 10. Port Connectivity Checks: "modMultCell:stCell"
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Port Connectivity Checks: "ListB:BFF0"
+ 13. Port Connectivity Checks: "modMultCell:thCell"
+ 14. Port Connectivity Checks: "modMultCell:rdCell"
+ 15. Port Connectivity Checks: "modMultCell:ndCell"
+ 16. Port Connectivity Checks: "modMultCell:stCell"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +49,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri May 12 15:24:13 2017           ;
+; Analysis & Synthesis Status        ; Successful - Wed May 17 15:27:16 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test                                            ;
 ; Top-level Entity Name              ; test                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 70                                              ;
-;     Total combinational functions  ; 64                                              ;
-;     Dedicated logic registers      ; 47                                              ;
-; Total registers                    ; 47                                              ;
-; Total pins                         ; 18                                              ;
+; Total logic elements               ; 118                                             ;
+;     Total combinational functions  ; 108                                             ;
+;     Dedicated logic registers      ; 82                                              ;
+; Total registers                    ; 82                                              ;
+; Total pins                         ; 69                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -165,34 +171,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 70    ;
-;                                             ;       ;
-; Total combinational functions               ; 64    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 22    ;
-;     -- 3 input functions                    ; 5     ;
-;     -- <=2 input functions                  ; 37    ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 34    ;
-;     -- arithmetic mode                      ; 30    ;
-;                                             ;       ;
-; Total registers                             ; 47    ;
-;     -- Dedicated logic registers            ; 47    ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 18    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; CLK   ;
-; Maximum fan-out                             ; 47    ;
-; Total fan-out                               ; 274   ;
-; Average fan-out                             ; 2.12  ;
-+---------------------------------------------+-------+
++--------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                              ;
++---------------------------------------------+----------------------------+
+; Resource                                    ; Usage                      ;
++---------------------------------------------+----------------------------+
+; Estimated Total logic elements              ; 118                        ;
+;                                             ;                            ;
+; Total combinational functions               ; 108                        ;
+; Logic element usage by number of LUT inputs ;                            ;
+;     -- 4 input functions                    ; 26                         ;
+;     -- 3 input functions                    ; 15                         ;
+;     -- <=2 input functions                  ; 67                         ;
+;                                             ;                            ;
+; Logic elements by mode                      ;                            ;
+;     -- normal mode                          ; 48                         ;
+;     -- arithmetic mode                      ; 60                         ;
+;                                             ;                            ;
+; Total registers                             ; 82                         ;
+;     -- Dedicated logic registers            ; 82                         ;
+;     -- I/O registers                        ; 0                          ;
+;                                             ;                            ;
+; I/O pins                                    ; 69                         ;
+; Embedded Multiplier 9-bit elements          ; 0                          ;
+; Maximum fan-out node                        ; controlClk:controller|CLKf ;
+; Maximum fan-out                             ; 50                         ;
+; Total fan-out                               ; 485                        ;
+; Average fan-out                             ; 1.87                       ;
++---------------------------------------------+----------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -200,46 +206,447 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |test                          ; 64 (0)            ; 47 (0)       ; 0           ; 0            ; 0       ; 0         ; 18   ; 0            ; |test                                            ; work         ;
-;    |ListB:BFF0|                ; 44 (44)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                 ; work         ;
-;    |modMultCell:ndCell|        ; 10 (2)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell                         ; work         ;
-;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipB         ; work         ;
-;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipC1B       ; work         ;
-;       |dflipflop:flipC1T|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipC1T       ; work         ;
-;       |dflipflop:flipC2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipC2        ; work         ;
+; |test                          ; 108 (0)           ; 82 (0)       ; 0           ; 0            ; 0       ; 0         ; 69   ; 0            ; |test                                            ; work         ;
+;    |ListB:BFF0|                ; 35 (35)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                 ; work         ;
+;    |ListQ:QFF0|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListQ:QFF0                                 ; work         ;
+;    |ListR:R0|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListR:R0                                   ; work         ;
+;    |controlClk:controller|     ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|controlClk:controller                      ; work         ;
+;    |hexDisp:HE0|               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE0                                ; work         ;
+;    |hexDisp:HE1|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE1                                ; work         ;
+;    |hexDisp:HE2|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE2                                ; work         ;
+;    |hexDisp:HE3|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE3                                ; work         ;
+;    |hexDisp:HE4|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE4                                ; work         ;
+;    |hexDisp:HE5|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE5                                ; work         ;
+;    |hexDisp:HE6|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE6                                ; work         ;
+;    |hexDisp:HE7|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE7                                ; work         ;
+;    |modMultCell:ndCell|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell                         ; work         ;
 ;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipS         ; work         ;
-;       |fullAdder:add1|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|fullAdder:add1          ; work         ;
-;       |fullAdder:add2|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|fullAdder:add2          ; work         ;
-;       |fullAdder:add3|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|fullAdder:add3          ; work         ;
-;       |fullAdder:add4|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|fullAdder:add4          ; work         ;
-;    |modMultCell:stCell|        ; 10 (2)            ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell                         ; work         ;
-;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|dflipflop:flipB         ; work         ;
-;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|dflipflop:flipC1B       ; work         ;
-;       |dflipflop:flipC1T|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|dflipflop:flipC1T       ; work         ;
-;       |dflipflop:flipC2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|dflipflop:flipC2        ; work         ;
-;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|dflipflop:flipS         ; work         ;
-;       |fullAdder:add1|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|fullAdder:add1          ; work         ;
-;       |fullAdder:add2|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|fullAdder:add2          ; work         ;
-;       |fullAdder:add3|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|fullAdder:add3          ; work         ;
-;       |fullAdder:add4|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:stCell|fullAdder:add4          ; work         ;
-;    |shift_register:RES0|       ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0                        ; work         ;
+;    |modMultCell:rdCell|        ; 4 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell                         ; work         ;
+;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipB         ; work         ;
+;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipC1B       ; work         ;
+;       |dflipflop:flipC1T|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipC1T       ; work         ;
+;       |dflipflop:flipQ|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipQ         ; work         ;
+;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipS         ; work         ;
+;       |fullAdder:add1|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add1          ; work         ;
+;       |fullAdder:add2|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add2          ; work         ;
+;    |modMultCell:thCell|        ; 2 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell                         ; work         ;
+;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipB         ; work         ;
+;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipC1B       ; work         ;
+;       |dflipflop:flipQ|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipQ         ; work         ;
+;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipS         ; work         ;
+;       |fullAdder:add2|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|fullAdder:add2          ; work         ;
+;    |shift_register:RES0|       ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0                        ; work         ;
 ;       |dflipflop:\floop:0:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:0:FFi ; work         ;
 ;       |dflipflop:\floop:1:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:1:FFi ; work         ;
 ;       |dflipflop:\floop:2:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:2:FFi ; work         ;
+;       |dflipflop:\floop:3:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:3:FFi ; work         ;
+;       |dflipflop:\floop:4:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:4:FFi ; work         ;
+;       |dflipflop:\floop:5:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:5:FFi ; work         ;
+;       |dflipflop:\floop:6:FFi| ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:\floop:6:FFi ; work         ;
 ;       |dflipflop:flip0|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|shift_register:RES0|dflipflop:flip0        ; work         ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+---------------------------------------+----------------------------------------------------------+
-; Register name                         ; Reason for Removal                                       ;
-+---------------------------------------+----------------------------------------------------------+
-; modMultCell:ndCell|dflipflop:flipQ|q  ; Merged with shift_register:RES0|dflipflop:flip0|q        ;
-; modMultCell:stCell|dflipflop:flipQ|q  ; Merged with shift_register:RES0|dflipflop:\floop:2:FFi|q ;
-; Total Number of Removed Registers = 2 ;                                                          ;
-+---------------------------------------+----------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; hexDisp:HE0|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE0|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE0|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE0|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE1|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE1|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE1|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE1|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE2|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE2|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE2|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE2|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE3|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE3|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE3|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE3|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE4|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE4|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE4|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE4|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE5|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE5|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE5|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE5|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE6|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE6|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE6|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE6|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE7|HEX[0]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE7|HEX[3]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE7|HEX[4]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; hexDisp:HE7|HEX[5]                                  ; hexDisp:HE0|Equal0  ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++-----------------------------------------+----------------------------------------+
+; Register name                           ; Reason for Removal                     ;
++-----------------------------------------+----------------------------------------+
+; modMultCell:stCell|dflipflop:flipB|q    ; Lost fanout                            ;
+; modMultCell:ndCell|dflipflop:flipB|q    ; Lost fanout                            ;
+; modMultCell:stCell|dflipflop:flipQ|q    ; Lost fanout                            ;
+; modMultCell:ndCell|dflipflop:flipQ|q    ; Lost fanout                            ;
+; modMultCell:stCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
+; modMultCell:stCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
+; modMultCell:stCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
+; modMultCell:stCell|dflipflop:flipS|q    ; Stuck at GND due to stuck port data_in ;
+; ListQ:QFF0|i[2]                         ; Merged with ListB:BFF0|i[2]            ;
+; ListR:R0|i[2]                           ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE0|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE1|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE2|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE3|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE4|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE5|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE6|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; hexDisp:HE7|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
+; ListQ:QFF0|i[1]                         ; Merged with ListB:BFF0|i[1]            ;
+; ListR:R0|i[1]                           ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE0|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE1|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE2|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE3|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE4|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE5|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE6|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; hexDisp:HE7|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
+; ListQ:QFF0|i[0]                         ; Merged with ListB:BFF0|i[0]            ;
+; ListR:R0|i[0]                           ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE0|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE1|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE2|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE3|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE4|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE5|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE6|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; hexDisp:HE7|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
+; ListQ:QFF0|i[3]                         ; Merged with ListB:BFF0|i[3]            ;
+; ListR:R0|i[3]                           ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE0|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE1|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE2|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE3|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE4|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE5|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE6|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; hexDisp:HE7|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
+; ListQ:QFF0|i[4]                         ; Merged with ListB:BFF0|i[4]            ;
+; ListR:R0|i[4]                           ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE0|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE1|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE2|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE3|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE4|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE5|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE6|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; hexDisp:HE7|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
+; ListQ:QFF0|i[5]                         ; Merged with ListB:BFF0|i[5]            ;
+; ListR:R0|i[5]                           ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE0|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE1|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE2|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE3|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE4|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE5|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE6|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; hexDisp:HE7|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
+; ListQ:QFF0|i[6]                         ; Merged with ListB:BFF0|i[6]            ;
+; ListR:R0|i[6]                           ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE0|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE1|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE2|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE3|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE4|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE5|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE6|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; hexDisp:HE7|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
+; ListQ:QFF0|i[7]                         ; Merged with ListB:BFF0|i[7]            ;
+; ListR:R0|i[7]                           ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE0|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE1|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE2|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE3|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE4|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE5|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE6|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; hexDisp:HE7|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
+; ListQ:QFF0|i[8]                         ; Merged with ListB:BFF0|i[8]            ;
+; ListR:R0|i[8]                           ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE0|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE1|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE2|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE3|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE4|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE5|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE6|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; hexDisp:HE7|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
+; ListQ:QFF0|i[9]                         ; Merged with ListB:BFF0|i[9]            ;
+; ListR:R0|i[9]                           ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE0|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE1|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE2|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE3|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE4|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE5|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE6|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; hexDisp:HE7|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
+; ListQ:QFF0|i[10]                        ; Merged with ListB:BFF0|i[10]           ;
+; ListR:R0|i[10]                          ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE0|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE1|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE2|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE3|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE4|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE5|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE6|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; hexDisp:HE7|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
+; ListQ:QFF0|i[11]                        ; Merged with ListB:BFF0|i[11]           ;
+; ListR:R0|i[11]                          ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE0|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE1|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE2|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE3|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE4|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE5|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE6|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; hexDisp:HE7|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
+; ListQ:QFF0|i[12]                        ; Merged with ListB:BFF0|i[12]           ;
+; ListR:R0|i[12]                          ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE0|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE1|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE2|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE3|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE4|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE5|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE6|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; hexDisp:HE7|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
+; ListQ:QFF0|i[13]                        ; Merged with ListB:BFF0|i[13]           ;
+; ListR:R0|i[13]                          ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE0|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE1|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE2|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE3|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE4|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE5|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE6|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; hexDisp:HE7|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
+; ListQ:QFF0|i[14]                        ; Merged with ListB:BFF0|i[14]           ;
+; ListR:R0|i[14]                          ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE0|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE1|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE2|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE3|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE4|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE5|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE6|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; hexDisp:HE7|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
+; ListQ:QFF0|i[15]                        ; Merged with ListB:BFF0|i[15]           ;
+; ListR:R0|i[15]                          ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE0|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE1|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE2|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE3|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE4|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE5|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE6|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; hexDisp:HE7|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
+; ListQ:QFF0|i[16]                        ; Merged with ListB:BFF0|i[16]           ;
+; ListR:R0|i[16]                          ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE0|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE1|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE2|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE3|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE4|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE5|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE6|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; hexDisp:HE7|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
+; ListQ:QFF0|i[17]                        ; Merged with ListB:BFF0|i[17]           ;
+; ListR:R0|i[17]                          ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE0|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE1|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE2|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE3|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE4|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE5|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE6|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; hexDisp:HE7|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
+; ListQ:QFF0|i[18]                        ; Merged with ListB:BFF0|i[18]           ;
+; ListR:R0|i[18]                          ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE0|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE1|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE2|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE3|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE4|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE5|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE6|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; hexDisp:HE7|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
+; ListQ:QFF0|i[19]                        ; Merged with ListB:BFF0|i[19]           ;
+; ListR:R0|i[19]                          ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE0|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE1|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE2|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE3|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE4|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE5|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE6|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; hexDisp:HE7|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
+; ListQ:QFF0|i[20]                        ; Merged with ListB:BFF0|i[20]           ;
+; ListR:R0|i[20]                          ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE0|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE1|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE2|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE3|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE4|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE5|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE6|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; hexDisp:HE7|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
+; ListQ:QFF0|i[21]                        ; Merged with ListB:BFF0|i[21]           ;
+; ListR:R0|i[21]                          ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE0|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE1|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE2|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE3|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE4|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE5|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE6|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; hexDisp:HE7|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
+; ListQ:QFF0|i[22]                        ; Merged with ListB:BFF0|i[22]           ;
+; ListR:R0|i[22]                          ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE0|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE1|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE2|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE3|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE4|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE5|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE6|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; hexDisp:HE7|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
+; ListQ:QFF0|i[23]                        ; Merged with ListB:BFF0|i[23]           ;
+; ListR:R0|i[23]                          ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE0|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE1|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE2|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE3|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE4|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE5|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE6|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; hexDisp:HE7|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
+; ListQ:QFF0|i[24]                        ; Merged with ListB:BFF0|i[24]           ;
+; ListR:R0|i[24]                          ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE0|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE1|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE2|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE3|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE4|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE5|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE6|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; hexDisp:HE7|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
+; ListQ:QFF0|i[25]                        ; Merged with ListB:BFF0|i[25]           ;
+; ListR:R0|i[25]                          ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE0|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE1|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE2|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE3|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE4|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE5|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE6|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; hexDisp:HE7|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
+; ListQ:QFF0|i[26]                        ; Merged with ListB:BFF0|i[26]           ;
+; ListR:R0|i[26]                          ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE0|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE1|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE2|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE3|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE4|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE5|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE6|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; hexDisp:HE7|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
+; ListQ:QFF0|i[27]                        ; Merged with ListB:BFF0|i[27]           ;
+; ListR:R0|i[27]                          ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE0|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE1|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE2|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE3|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE4|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE5|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE6|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; hexDisp:HE7|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
+; ListQ:QFF0|i[28]                        ; Merged with ListB:BFF0|i[28]           ;
+; ListR:R0|i[28]                          ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE0|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE1|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE2|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE3|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE4|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE5|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE6|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; hexDisp:HE7|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
+; ListQ:QFF0|i[29]                        ; Merged with ListB:BFF0|i[29]           ;
+; ListR:R0|i[29]                          ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE0|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE1|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE2|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE3|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE4|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE5|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE6|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; hexDisp:HE7|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
+; ListQ:QFF0|i[30]                        ; Merged with ListB:BFF0|i[30]           ;
+; ListR:R0|i[30]                          ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE0|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE1|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE2|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE3|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE4|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE5|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE6|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; hexDisp:HE7|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
+; ListQ:QFF0|i[31]                        ; Merged with ListB:BFF0|i[31]           ;
+; ListR:R0|i[31]                          ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE0|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE1|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE2|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE3|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE4|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE5|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE6|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; hexDisp:HE7|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
+; modMultCell:thCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
+; modMultCell:rdCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
+; modMultCell:thCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 334 ;                                        ;
++-----------------------------------------+----------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                      ;
++---------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++---------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; modMultCell:stCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:stCell|dflipflop:flipC1T|q, modMultCell:stCell|dflipflop:flipS|q ;
+;                                       ; due to stuck port data_in ;                                                                              ;
+; modMultCell:stCell|dflipflop:flipB|q  ; Lost Fanouts              ; modMultCell:ndCell|dflipflop:flipB|q                                         ;
+; modMultCell:stCell|dflipflop:flipQ|q  ; Lost Fanouts              ; modMultCell:ndCell|dflipflop:flipQ|q                                         ;
+; modMultCell:thCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:thCell|dflipflop:flipC1T|q                                       ;
+;                                       ; due to stuck port data_in ;                                                                              ;
+; modMultCell:ndCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:ndCell|dflipflop:flipC1T|q                                       ;
+;                                       ; due to stuck port data_in ;                                                                              ;
++---------------------------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -247,7 +654,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 47    ;
+; Total registers                              ; 82    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -257,11 +664,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++-------------------------------------------+
+; Port Connectivity Checks: "ListB:BFF0"    ;
++---------+-------+----------+--------------+
+; Port    ; Type  ; Severity ; Details      ;
++---------+-------+----------+--------------+
+; l[7..1] ; Input ; Info     ; Stuck at GND ;
+; l[0]    ; Input ; Info     ; Stuck at VCC ;
++---------+-------+----------+--------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "modMultCell:thCell" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; a1   ; Input ; Info     ; Stuck at GND         ;
+; a2   ; Input ; Info     ; Stuck at VCC         ;
+; m1   ; Input ; Info     ; Stuck at GND         ;
+; m2   ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "modMultCell:rdCell" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; a1   ; Input ; Info     ; Stuck at VCC         ;
+; a2   ; Input ; Info     ; Stuck at VCC         ;
+; m1   ; Input ; Info     ; Stuck at GND         ;
+; m2   ; Input ; Info     ; Stuck at GND         ;
++------+-------+----------+----------------------+
+
+
++------------------------------------------------+
+; Port Connectivity Checks: "modMultCell:ndCell" ;
++------+-------+----------+----------------------+
+; Port ; Type  ; Severity ; Details              ;
++------+-------+----------+----------------------+
+; a1   ; Input ; Info     ; Stuck at GND         ;
+; a2   ; Input ; Info     ; Stuck at GND         ;
+; m1   ; Input ; Info     ; Stuck at GND         ;
+; m2   ; Input ; Info     ; Stuck at VCC         ;
++------+-------+----------+----------------------+
+
+
 +---------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "modMultCell:stCell"                                                                ;
 +------+-------+----------+-------------------------------------------------------------------------------------+
 ; Port ; Type  ; Severity ; Details                                                                             ;
 +------+-------+----------+-------------------------------------------------------------------------------------+
+; a1   ; Input ; Info     ; Stuck at GND                                                                        ;
+; a2   ; Input ; Info     ; Stuck at GND                                                                        ;
+; m1   ; Input ; Info     ; Stuck at GND                                                                        ;
+; m2   ; Input ; Info     ; Stuck at GND                                                                        ;
 ; bff  ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; qff  ; Bidir ; Warning  ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
 ; s    ; Input ; Info     ; Stuck at GND                                                                        ;
@@ -283,39 +740,128 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri May 12 15:24:10 2017
+    Info: Processing started: Wed May 17 15:27:13 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modularMultiplier -c test
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 12 design units, including 6 entities, in source file test.vhd
-    Info (12022): Found design unit 1: test-modMult2
-    Info (12022): Found design unit 2: modMultCell-modMult
-    Info (12022): Found design unit 3: fullAdder-add
-    Info (12022): Found design unit 4: shift_register-shiftRight
-    Info (12022): Found design unit 5: ListB-getB
-    Info (12022): Found design unit 6: dflipflop-flip
-    Info (12023): Found entity 1: test
-    Info (12023): Found entity 2: modMultCell
-    Info (12023): Found entity 3: fullAdder
-    Info (12023): Found entity 4: shift_register
-    Info (12023): Found entity 5: ListB
-    Info (12023): Found entity 6: dflipflop
+Info (12021): Found 20 design units, including 10 entities, in source file test.vhd
+    Info (12022): Found design unit 1: controlClk-control
+    Info (12022): Found design unit 2: test-modMult2
+    Info (12022): Found design unit 3: modMultCell-modMult
+    Info (12022): Found design unit 4: fullAdder-add
+    Info (12022): Found design unit 5: shift_register-shiftRight
+    Info (12022): Found design unit 6: ListR-getR
+    Info (12022): Found design unit 7: ListB-getB
+    Info (12022): Found design unit 8: ListQ-getQ
+    Info (12022): Found design unit 9: dflipflop-flip
+    Info (12022): Found design unit 10: hexDisp-display
+    Info (12023): Found entity 1: controlClk
+    Info (12023): Found entity 2: test
+    Info (12023): Found entity 3: modMultCell
+    Info (12023): Found entity 4: fullAdder
+    Info (12023): Found entity 5: shift_register
+    Info (12023): Found entity 6: ListR
+    Info (12023): Found entity 7: ListB
+    Info (12023): Found entity 8: ListQ
+    Info (12023): Found entity 9: dflipflop
+    Info (12023): Found entity 10: hexDisp
 Info (12127): Elaborating entity "test" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at test.vhd(49): used implicit default value for signal "LCDON" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10541): VHDL Signal Declaration warning at test.vhd(50): used implicit default value for signal "LCBL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
+Warning (10540): VHDL Signal Declaration warning at test.vhd(60): used explicit default value for signal "A" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at test.vhd(61): used explicit default value for signal "B" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at test.vhd(62): used explicit default value for signal "M" because signal was never assigned a value
+Info (12129): Elaborating entity "controlClk" using architecture "A:control" for hierarchy "controlClk:controller"
+Warning (10492): VHDL Process Statement warning at test.vhd(16): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "modMultCell" using architecture "A:modmult" for hierarchy "modMultCell:stCell"
 Info (12129): Elaborating entity "fullAdder" using architecture "A:add" for hierarchy "modMultCell:stCell|fullAdder:add1"
 Info (12129): Elaborating entity "dflipflop" using architecture "A:flip" for hierarchy "modMultCell:stCell|dflipflop:flipS"
 Info (12129): Elaborating entity "ListB" using architecture "A:getb" for hierarchy "ListB:BFF0"
-Warning (10540): VHDL Signal Declaration warning at test.vhd(247): used explicit default value for signal "LTemp" because signal was never assigned a value
+Warning (10492): VHDL Process Statement warning at test.vhd(402): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "L" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12129): Elaborating entity "ListQ" using architecture "A:getq" for hierarchy "ListQ:QFF0"
+Warning (10492): VHDL Process Statement warning at test.vhd(430): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(431): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12129): Elaborating entity "ListR" using architecture "A:getr" for hierarchy "ListR:R0"
+Warning (10492): VHDL Process Statement warning at test.vhd(368): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(370): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(371): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(373): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "shift_register" using architecture "A:shiftright" for hierarchy "shift_register:RES0"
+Info (12129): Elaborating entity "hexDisp" using architecture "A:display" for hierarchy "hexDisp:HE0"
+Warning (10492): VHDL Process Statement warning at test.vhd(480): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(481): signal "N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at test.vhd(478): inferring latch(es) for signal or variable "HEX", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "HEX[0]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[1]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[2]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[3]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[4]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[5]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[6]" at test.vhd(478)
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE0|HEX[3]" merged with LATCH primitive "hexDisp:HE0|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE0|HEX[4]" merged with LATCH primitive "hexDisp:HE0|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE0|HEX[5]" merged with LATCH primitive "hexDisp:HE0|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE1|HEX[3]" merged with LATCH primitive "hexDisp:HE1|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE1|HEX[4]" merged with LATCH primitive "hexDisp:HE1|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE1|HEX[5]" merged with LATCH primitive "hexDisp:HE1|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE2|HEX[3]" merged with LATCH primitive "hexDisp:HE2|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE2|HEX[4]" merged with LATCH primitive "hexDisp:HE2|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE2|HEX[5]" merged with LATCH primitive "hexDisp:HE2|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE3|HEX[3]" merged with LATCH primitive "hexDisp:HE3|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE3|HEX[4]" merged with LATCH primitive "hexDisp:HE3|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE3|HEX[5]" merged with LATCH primitive "hexDisp:HE3|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE4|HEX[3]" merged with LATCH primitive "hexDisp:HE4|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE4|HEX[4]" merged with LATCH primitive "hexDisp:HE4|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE4|HEX[5]" merged with LATCH primitive "hexDisp:HE4|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE5|HEX[3]" merged with LATCH primitive "hexDisp:HE5|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE5|HEX[4]" merged with LATCH primitive "hexDisp:HE5|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE5|HEX[5]" merged with LATCH primitive "hexDisp:HE5|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE6|HEX[3]" merged with LATCH primitive "hexDisp:HE6|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE6|HEX[4]" merged with LATCH primitive "hexDisp:HE6|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE6|HEX[5]" merged with LATCH primitive "hexDisp:HE6|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE7|HEX[3]" merged with LATCH primitive "hexDisp:HE7|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE7|HEX[4]" merged with LATCH primitive "hexDisp:HE7|HEX[0]"
+    Info (13026): Duplicate LATCH primitive "hexDisp:HE7|HEX[5]" merged with LATCH primitive "hexDisp:HE7|HEX[0]"
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "H0[1]" is stuck at GND
+    Warning (13410): Pin "H0[2]" is stuck at GND
+    Warning (13410): Pin "H0[6]" is stuck at VCC
+    Warning (13410): Pin "H1[1]" is stuck at GND
+    Warning (13410): Pin "H1[2]" is stuck at GND
+    Warning (13410): Pin "H1[6]" is stuck at VCC
+    Warning (13410): Pin "H2[1]" is stuck at GND
+    Warning (13410): Pin "H2[2]" is stuck at GND
+    Warning (13410): Pin "H2[6]" is stuck at VCC
+    Warning (13410): Pin "H3[1]" is stuck at GND
+    Warning (13410): Pin "H3[2]" is stuck at GND
+    Warning (13410): Pin "H3[6]" is stuck at VCC
+    Warning (13410): Pin "H4[1]" is stuck at GND
+    Warning (13410): Pin "H4[2]" is stuck at GND
+    Warning (13410): Pin "H4[6]" is stuck at VCC
+    Warning (13410): Pin "H5[1]" is stuck at GND
+    Warning (13410): Pin "H5[2]" is stuck at GND
+    Warning (13410): Pin "H5[6]" is stuck at VCC
+    Warning (13410): Pin "H6[1]" is stuck at GND
+    Warning (13410): Pin "H6[2]" is stuck at GND
+    Warning (13410): Pin "H6[6]" is stuck at VCC
+    Warning (13410): Pin "H7[1]" is stuck at GND
+    Warning (13410): Pin "H7[2]" is stuck at GND
+    Warning (13410): Pin "H7[6]" is stuck at VCC
+    Warning (13410): Pin "LCDON" is stuck at GND
+    Warning (13410): Pin "LCBL" is stuck at GND
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 88 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 5 output pins
-    Info (21061): Implemented 70 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 533 megabytes
-    Info: Processing ended: Fri May 12 15:24:13 2017
+Info (21057): Implemented 188 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 1 input pins
+    Info (21059): Implemented 68 output pins
+    Info (21061): Implemented 119 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 47 warnings
+    Info: Peak virtual memory: 549 megabytes
+    Info: Processing ended: Wed May 17 15:27:16 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
