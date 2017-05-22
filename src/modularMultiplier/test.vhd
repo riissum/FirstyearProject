@@ -45,26 +45,24 @@ ENTITY test IS
 			H4       :   OUT   STD_LOGIC_VECTOR( 6 DOWNTO 0 );
 			H5       :   OUT   STD_LOGIC_VECTOR( 6 DOWNTO 0 );
 			H6       :   OUT   STD_LOGIC_VECTOR( 6 DOWNTO 0 );
-			H7       :   OUT   STD_LOGIC_VECTOR( 6 DOWNTO 0 );
-			LCDON    :   OUT STD_LOGIC;
-			LCBL     :   OUT STD_LOGIC
+			H7       :   OUT   STD_LOGIC_VECTOR( 6 DOWNTO 0 )
       );                                                         
 END test;
 
 ARCHITECTURE modMult2 OF test IS                                    
-   SIGNAL   nextB      :   STD_LOGIC                        :=   '0';
-   SIGNAL   nextQ      :   STD_LOGIC                        :=   '0';
-   SIGNAL   nextS      :   STD_LOGIC                        :=   '0';
-   SIGNAL   S          :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";	
-	SIGNAL   FFB, FFQ   :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";
-   SIGNAL   A          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00001101";  -- 13 (11)
-   SIGNAL   B          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000001";  -- 1  (8)
-   SIGNAL   M          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00010000";  -- 16 (31)   SKAL GIVE 9
-   SIGNAL   R          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000000";
+   SIGNAL   nextB      :   STD_LOGIC                        :=   '0';         -- Næste b (egen counter, er 0 efter 8)
+   SIGNAL   nextQ      :   STD_LOGIC                        :=   '0';         -- Næste q (egen counter, er 0 efter 8)
+   SIGNAL   nextS      :   STD_LOGIC                        :=   '0';         -- Næste s (egen counter, kommer efter 8 cycles)
+   SIGNAL   S          :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";	   -- Liste af summer fra hver celle
+	SIGNAL   FFB, FFQ   :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";      -- Flipflops af b og q fra alle celler
+   SIGNAL   A          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000101";  -- A i m-res
+   SIGNAL   B          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00010011";  -- B i m-res
+   SIGNAL   M          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00001100";  -- (m+1)/2
+   SIGNAL   R          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000000";  
    SIGNAL   fclk       :   STD_LOGIC;
 BEGIN                           
 
-   controller : WORK.controlClk(control)
+   cntlr : WORK.controlClk(control)
       PORT MAP (
                CLK => CLK,
               CLKf => fclk
@@ -187,10 +185,10 @@ ENTITY modMultCell IS
    PORT (
          a1,a2   :   IN    STD_LOGIC;
          m1,m2   :   IN    STD_LOGIC;
-         b       :   IN    STD_LOGIC;
-         bff     :  INOUT  STD_LOGIC;
-         q       :   IN    STD_LOGIC;
-         qff     :  INOUT  STD_LOGIC;
+         b       :   IN    STD_LOGIC;  -- b from neighbour flipflop
+         bff     :  INOUT  STD_LOGIC;  -- Incoming b flipflop
+         q       :   IN    STD_LOGIC;  -- q from neighbour flipflop
+         qff     :  INOUT  STD_LOGIC;  -- Incoming q flipflop
 			clk     :   IN    STD_LOGIC;
 			s       :   IN    STD_LOGIC;
 			sOut    :   OUT   STD_LOGIC
@@ -202,7 +200,6 @@ ARCHITECTURE modMult OF modMultCell IS
    SIGNAL   c1T, c1B, c2            :   STD_LOGIC                        :=   '0';   -- C-flipflops
    SIGNAL   n                       :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";-- AND results
    SIGNAL   p                       :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";-- Full adder results
-   --SIGNAL   bIntern, qIntern        :   STD_LOGIC                        :=   '0';
 BEGIN
 
 -- *** GATES ***
@@ -282,14 +279,13 @@ BEGIN
               clk => clk,
                 q => bff
                );
-	--bff <= bIntern;
+					
 	flipQ : WORK.dflipflop(flip)
       PORT MAP (
                 d => q,
               clk => clk,
                 q => qff
                );
-   --qff <= qIntern;
 
 END modMult;
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test
-Wed May 17 15:27:16 2017
+Mon May 22 13:54:39 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -49,16 +49,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed May 17 15:27:16 2017           ;
+; Analysis & Synthesis Status        ; Successful - Mon May 22 13:54:39 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test                                            ;
 ; Top-level Entity Name              ; test                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 118                                             ;
-;     Total combinational functions  ; 108                                             ;
-;     Dedicated logic registers      ; 82                                              ;
-; Total registers                    ; 82                                              ;
-; Total pins                         ; 69                                              ;
+; Total logic elements               ; 119                                             ;
+;     Total combinational functions  ; 111                                             ;
+;     Dedicated logic registers      ; 81                                              ;
+; Total registers                    ; 81                                              ;
+; Total pins                         ; 67                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -171,34 +171,34 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------+--------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                              ;
-+---------------------------------------------+----------------------------+
-; Resource                                    ; Usage                      ;
-+---------------------------------------------+----------------------------+
-; Estimated Total logic elements              ; 118                        ;
-;                                             ;                            ;
-; Total combinational functions               ; 108                        ;
-; Logic element usage by number of LUT inputs ;                            ;
-;     -- 4 input functions                    ; 26                         ;
-;     -- 3 input functions                    ; 15                         ;
-;     -- <=2 input functions                  ; 67                         ;
-;                                             ;                            ;
-; Logic elements by mode                      ;                            ;
-;     -- normal mode                          ; 48                         ;
-;     -- arithmetic mode                      ; 60                         ;
-;                                             ;                            ;
-; Total registers                             ; 82                         ;
-;     -- Dedicated logic registers            ; 82                         ;
-;     -- I/O registers                        ; 0                          ;
-;                                             ;                            ;
-; I/O pins                                    ; 69                         ;
-; Embedded Multiplier 9-bit elements          ; 0                          ;
-; Maximum fan-out node                        ; controlClk:controller|CLKf ;
-; Maximum fan-out                             ; 50                         ;
-; Total fan-out                               ; 485                        ;
-; Average fan-out                             ; 1.87                       ;
-+---------------------------------------------+----------------------------+
++---------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                         ;
++---------------------------------------------+-----------------------+
+; Resource                                    ; Usage                 ;
++---------------------------------------------+-----------------------+
+; Estimated Total logic elements              ; 119                   ;
+;                                             ;                       ;
+; Total combinational functions               ; 111                   ;
+; Logic element usage by number of LUT inputs ;                       ;
+;     -- 4 input functions                    ; 29                    ;
+;     -- 3 input functions                    ; 14                    ;
+;     -- <=2 input functions                  ; 68                    ;
+;                                             ;                       ;
+; Logic elements by mode                      ;                       ;
+;     -- normal mode                          ; 51                    ;
+;     -- arithmetic mode                      ; 60                    ;
+;                                             ;                       ;
+; Total registers                             ; 81                    ;
+;     -- Dedicated logic registers            ; 81                    ;
+;     -- I/O registers                        ; 0                     ;
+;                                             ;                       ;
+; I/O pins                                    ; 67                    ;
+; Embedded Multiplier 9-bit elements          ; 0                     ;
+; Maximum fan-out node                        ; controlClk:cntlr|CLKf ;
+; Maximum fan-out                             ; 49                    ;
+; Total fan-out                               ; 494                   ;
+; Average fan-out                             ; 1.91                  ;
++---------------------------------------------+-----------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -206,11 +206,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |test                          ; 108 (0)           ; 82 (0)       ; 0           ; 0            ; 0       ; 0         ; 69   ; 0            ; |test                                            ; work         ;
-;    |ListB:BFF0|                ; 35 (35)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                 ; work         ;
+; |test                          ; 111 (0)           ; 81 (0)       ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |test                                            ; work         ;
+;    |ListB:BFF0|                ; 36 (36)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                 ; work         ;
 ;    |ListQ:QFF0|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListQ:QFF0                                 ; work         ;
 ;    |ListR:R0|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListR:R0                                   ; work         ;
-;    |controlClk:controller|     ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|controlClk:controller                      ; work         ;
+;    |controlClk:cntlr|          ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|controlClk:cntlr                           ; work         ;
 ;    |hexDisp:HE0|               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE0                                ; work         ;
 ;    |hexDisp:HE1|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE1                                ; work         ;
 ;    |hexDisp:HE2|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE2                                ; work         ;
@@ -219,16 +219,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;    |hexDisp:HE5|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE5                                ; work         ;
 ;    |hexDisp:HE6|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE6                                ; work         ;
 ;    |hexDisp:HE7|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE7                                ; work         ;
-;    |modMultCell:ndCell|        ; 0 (0)             ; 1 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell                         ; work         ;
-;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:ndCell|dflipflop:flipS         ; work         ;
-;    |modMultCell:rdCell|        ; 4 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell                         ; work         ;
-;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipB         ; work         ;
+;    |modMultCell:rdCell|        ; 6 (0)             ; 5 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell                         ; work         ;
 ;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipC1B       ; work         ;
 ;       |dflipflop:flipC1T|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipC1T       ; work         ;
+;       |dflipflop:flipC2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipC2        ; work         ;
 ;       |dflipflop:flipQ|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipQ         ; work         ;
 ;       |dflipflop:flipS|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|dflipflop:flipS         ; work         ;
-;       |fullAdder:add1|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add1          ; work         ;
+;       |fullAdder:add1|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add1          ; work         ;
 ;       |fullAdder:add2|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add2          ; work         ;
+;       |fullAdder:add3|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add3          ; work         ;
+;       |fullAdder:add4|         ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:rdCell|fullAdder:add4          ; work         ;
 ;    |modMultCell:thCell|        ; 2 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell                         ; work         ;
 ;       |dflipflop:flipB|        ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipB         ; work         ;
 ;       |dflipflop:flipC1B|      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|modMultCell:thCell|dflipflop:flipC1B       ; work         ;
@@ -297,12 +297,17 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------+----------------------------------------+
 ; modMultCell:stCell|dflipflop:flipB|q    ; Lost fanout                            ;
 ; modMultCell:ndCell|dflipflop:flipB|q    ; Lost fanout                            ;
+; modMultCell:rdCell|dflipflop:flipB|q    ; Lost fanout                            ;
 ; modMultCell:stCell|dflipflop:flipQ|q    ; Lost fanout                            ;
 ; modMultCell:ndCell|dflipflop:flipQ|q    ; Lost fanout                            ;
+; modMultCell:ndCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:stCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:stCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:stCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:stCell|dflipflop:flipS|q    ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
+; modMultCell:ndCell|dflipflop:flipS|q    ; Stuck at GND due to stuck port data_in ;
 ; ListQ:QFF0|i[2]                         ; Merged with ListB:BFF0|i[2]            ;
 ; ListR:R0|i[2]                           ; Merged with ListB:BFF0|i[2]            ;
 ; hexDisp:HE0|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
@@ -624,12 +629,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
 ; hexDisp:HE7|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
 ; modMultCell:thCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
-; modMultCell:rdCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
-; modMultCell:ndCell|dflipflop:flipC2|q   ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:thCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
-; modMultCell:ndCell|dflipflop:flipC1T|q  ; Stuck at GND due to stuck port data_in ;
-; modMultCell:ndCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 334 ;                                        ;
+; Total Number of Removed Registers = 335 ;                                        ;
 +-----------------------------------------+----------------------------------------+
 
 
@@ -638,13 +639,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------------------------------------+---------------------------+------------------------------------------------------------------------------+
 ; Register name                         ; Reason for Removal        ; Registers Removed due to This Register                                       ;
 +---------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; modMultCell:stCell|dflipflop:flipB|q  ; Lost Fanouts              ; modMultCell:ndCell|dflipflop:flipB|q, modMultCell:rdCell|dflipflop:flipB|q   ;
+; modMultCell:ndCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:ndCell|dflipflop:flipC1T|q, modMultCell:ndCell|dflipflop:flipS|q ;
+;                                       ; due to stuck port data_in ;                                                                              ;
 ; modMultCell:stCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:stCell|dflipflop:flipC1T|q, modMultCell:stCell|dflipflop:flipS|q ;
 ;                                       ; due to stuck port data_in ;                                                                              ;
-; modMultCell:stCell|dflipflop:flipB|q  ; Lost Fanouts              ; modMultCell:ndCell|dflipflop:flipB|q                                         ;
 ; modMultCell:stCell|dflipflop:flipQ|q  ; Lost Fanouts              ; modMultCell:ndCell|dflipflop:flipQ|q                                         ;
 ; modMultCell:thCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:thCell|dflipflop:flipC1T|q                                       ;
-;                                       ; due to stuck port data_in ;                                                                              ;
-; modMultCell:ndCell|dflipflop:flipC2|q ; Stuck at GND              ; modMultCell:ndCell|dflipflop:flipC1T|q                                       ;
 ;                                       ; due to stuck port data_in ;                                                                              ;
 +---------------------------------------+---------------------------+------------------------------------------------------------------------------+
 
@@ -654,7 +655,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 82    ;
+; Total registers                              ; 81    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -669,8 +670,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +---------+-------+----------+--------------+
 ; Port    ; Type  ; Severity ; Details      ;
 +---------+-------+----------+--------------+
-; l[7..1] ; Input ; Info     ; Stuck at GND ;
-; l[0]    ; Input ; Info     ; Stuck at VCC ;
+; l[1..0] ; Input ; Info     ; Stuck at VCC ;
+; l[7..5] ; Input ; Info     ; Stuck at GND ;
+; l[3..2] ; Input ; Info     ; Stuck at GND ;
+; l[4]    ; Input ; Info     ; Stuck at VCC ;
 +---------+-------+----------+--------------+
 
 
@@ -691,10 +694,10 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +------+-------+----------+----------------------+
 ; Port ; Type  ; Severity ; Details              ;
 +------+-------+----------+----------------------+
-; a1   ; Input ; Info     ; Stuck at VCC         ;
+; a1   ; Input ; Info     ; Stuck at GND         ;
 ; a2   ; Input ; Info     ; Stuck at VCC         ;
-; m1   ; Input ; Info     ; Stuck at GND         ;
-; m2   ; Input ; Info     ; Stuck at GND         ;
+; m1   ; Input ; Info     ; Stuck at VCC         ;
+; m2   ; Input ; Info     ; Stuck at VCC         ;
 +------+-------+----------+----------------------+
 
 
@@ -706,7 +709,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; a1   ; Input ; Info     ; Stuck at GND         ;
 ; a2   ; Input ; Info     ; Stuck at GND         ;
 ; m1   ; Input ; Info     ; Stuck at GND         ;
-; m2   ; Input ; Info     ; Stuck at VCC         ;
+; m2   ; Input ; Info     ; Stuck at GND         ;
 +------+-------+----------+----------------------+
 
 
@@ -740,7 +743,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed May 17 15:27:13 2017
+    Info: Processing started: Mon May 22 13:54:36 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modularMultiplier -c test
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 20 design units, including 10 entities, in source file test.vhd
@@ -765,40 +768,38 @@ Info (12021): Found 20 design units, including 10 entities, in source file test.
     Info (12023): Found entity 9: dflipflop
     Info (12023): Found entity 10: hexDisp
 Info (12127): Elaborating entity "test" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at test.vhd(49): used implicit default value for signal "LCDON" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at test.vhd(50): used implicit default value for signal "LCBL" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10540): VHDL Signal Declaration warning at test.vhd(60): used explicit default value for signal "A" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at test.vhd(61): used explicit default value for signal "B" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at test.vhd(62): used explicit default value for signal "M" because signal was never assigned a value
-Info (12129): Elaborating entity "controlClk" using architecture "A:control" for hierarchy "controlClk:controller"
+Warning (10540): VHDL Signal Declaration warning at test.vhd(58): used explicit default value for signal "A" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at test.vhd(59): used explicit default value for signal "B" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at test.vhd(60): used explicit default value for signal "M" because signal was never assigned a value
+Info (12129): Elaborating entity "controlClk" using architecture "A:control" for hierarchy "controlClk:cntlr"
 Warning (10492): VHDL Process Statement warning at test.vhd(16): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "modMultCell" using architecture "A:modmult" for hierarchy "modMultCell:stCell"
 Info (12129): Elaborating entity "fullAdder" using architecture "A:add" for hierarchy "modMultCell:stCell|fullAdder:add1"
 Info (12129): Elaborating entity "dflipflop" using architecture "A:flip" for hierarchy "modMultCell:stCell|dflipflop:flipS"
 Info (12129): Elaborating entity "ListB" using architecture "A:getb" for hierarchy "ListB:BFF0"
-Warning (10492): VHDL Process Statement warning at test.vhd(402): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "L" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(400): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(401): signal "L" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(401): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "ListQ" using architecture "A:getq" for hierarchy "ListQ:QFF0"
-Warning (10492): VHDL Process Statement warning at test.vhd(430): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(431): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(428): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(429): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "ListR" using architecture "A:getr" for hierarchy "ListR:R0"
-Warning (10492): VHDL Process Statement warning at test.vhd(368): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(370): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(371): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(373): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(366): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(368): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(369): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(371): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "shift_register" using architecture "A:shiftright" for hierarchy "shift_register:RES0"
 Info (12129): Elaborating entity "hexDisp" using architecture "A:display" for hierarchy "hexDisp:HE0"
-Warning (10492): VHDL Process Statement warning at test.vhd(480): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(481): signal "N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at test.vhd(478): inferring latch(es) for signal or variable "HEX", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "HEX[0]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[1]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[2]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[3]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[4]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[5]" at test.vhd(478)
-Info (10041): Inferred latch for "HEX[6]" at test.vhd(478)
+Warning (10492): VHDL Process Statement warning at test.vhd(478): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(479): signal "N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at test.vhd(476): inferring latch(es) for signal or variable "HEX", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "HEX[0]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[1]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[2]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[3]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[4]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[5]" at test.vhd(476)
+Info (10041): Inferred latch for "HEX[6]" at test.vhd(476)
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "hexDisp:HE0|HEX[3]" merged with LATCH primitive "hexDisp:HE0|HEX[0]"
@@ -850,18 +851,16 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "H7[1]" is stuck at GND
     Warning (13410): Pin "H7[2]" is stuck at GND
     Warning (13410): Pin "H7[6]" is stuck at VCC
-    Warning (13410): Pin "LCDON" is stuck at GND
-    Warning (13410): Pin "LCBL" is stuck at GND
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 188 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 187 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 68 output pins
-    Info (21061): Implemented 119 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 549 megabytes
-    Info: Processing ended: Wed May 17 15:27:16 2017
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 120 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 537 megabytes
+    Info: Processing ended: Mon May 22 13:54:39 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

@@ -455,7 +455,7 @@ GND*                         : J24       :        :                   :         
 GND*                         : J25       :        :                   :         : 5         :                
 GND*                         : J26       :        :                   :         : 5         :                
 GND*                         : K1        :        :                   :         : 2         :                
-LCBL                         : K2        : output : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : K2        :        :                   :         : 2         :                
 GND*                         : K3        :        :                   :         : 2         :                
 GND*                         : K4        :        :                   :         : 2         :                
 GND*                         : K5        :        :                   :         : 2         :                
@@ -483,7 +483,7 @@ GND*                         : K26       :        :                   :         
 VCCIO2                       : L1        : power  :                   : 3.3V    : 2         :                
 H7[1]                        : L2        : output : 3.3-V LVTTL       :         : 2         : Y              
 H7[0]                        : L3        : output : 3.3-V LVTTL       :         : 2         : Y              
-LCDON                        : L4        : output : 3.3-V LVTTL       :         : 2         : Y              
+GND*                         : L4        :        :                   :         : 2         :                
 GND                          : L5        : gnd    :                   :         :           :                
 H7[3]                        : L6        : output : 3.3-V LVTTL       :         : 2         : Y              
 H7[4]                        : L7        : output : 3.3-V LVTTL       :         : 2         : Y              
