@@ -55,18 +55,21 @@ ARCHITECTURE modMult2 OF test IS
    SIGNAL   nextS      :   STD_LOGIC                        :=   '0';         -- Næste s (egen counter, kommer efter 8 cycles)
    SIGNAL   S          :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";	   -- Liste af summer fra hver celle
 	SIGNAL   FFB, FFQ   :   STD_LOGIC_VECTOR( 3 DOWNTO 0 )   :=   "0000";      -- Flipflops af b og q fra alle celler
-   SIGNAL   A          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000101";  -- A i m-res
-   SIGNAL   B          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00010011";  -- B i m-res
+   SIGNAL   A          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000101";  -- a i m-res
+   SIGNAL   B          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00010011";  -- b i m-res
    SIGNAL   M          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00001100";  -- (m+1)/2
    SIGNAL   R          :   STD_LOGIC_VECTOR( 7 DOWNTO 0 )   :=   "00000000";  
    SIGNAL   fclk       :   STD_LOGIC;
 BEGIN                           
+-- *** FAKE CLOCK ********************************
+-- Controls that nothing happens after 16 cycles
 
    cntlr : WORK.controlClk(control)
       PORT MAP (
                CLK => CLK,
               CLKf => fclk
                );
+-- ***********************************************
 
 
 
@@ -141,7 +144,7 @@ BEGIN
               clk => fclk,
              qOut => nextQ
                 );
-   R0 : WORK.ListR(getR)
+   R0 : WORK.ListS(getS)
       PORT MAP (
                 S => S(3),
               clk => fclk,
@@ -173,7 +176,7 @@ BEGIN
 	HE7 : WORK.hexDisp(display)
       PORT MAP ( N => R(7), HEX => H7, clk => fclk );
 	
-	
+-- Print to leds, and monitor B.
 	RES <= R;
 	bMoni <= nextB;
 END modMult2;
@@ -223,7 +226,7 @@ BEGIN
    add2 : WORK.fullAdder(add) -- * 1 *  (Mid FA)
       PORT MAP (
                 a => p(0),   -- Product from 1st FA
-                b => s,    -- sIn from entity
+                b => s,      -- sIn from entity
               cIn => p(2),   -- Product from 3rs FA
                 s => p(1),   -- Sum -> Later put into s-flipflop
              cOut => c(1) 
@@ -347,17 +350,17 @@ END shiftRight;
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
                                                                
-ENTITY ListR IS                                               
+ENTITY ListS IS                                               
    PORT (                                                     
           S      :   IN    STD_LOGIC;      
           sOut   :   OUT   STD_LOGIC;                          
           clk    :   IN    STD_LOGIC;
           TT     :   OUT   STD_LOGIC
          );                                                    
-END ListR;
+END ListS;
 
-ARCHITECTURE getR of ListR IS  
-   SIGNAL   i       :   INTEGER                          :=   0;     
+ARCHITECTURE getS of ListS IS  
+   SIGNAL   i   :   INTEGER   :=   0;     
 BEGIN
    PROCESS( clk ) IS
    BEGIN
@@ -376,7 +379,7 @@ BEGIN
          i <= i + 1;
 		END IF;
    END PROCESS;
-END getR;
+END getS;
 
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;

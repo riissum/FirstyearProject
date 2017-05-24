@@ -1,0 +1,1443 @@
+|modExp
+CLK => controlclk:cntlr.CLK
+RES[0] <= RES[0].DB_MAX_OUTPUT_PORT_TYPE
+RES[1] <= RES[1].DB_MAX_OUTPUT_PORT_TYPE
+RES[2] <= RES[2].DB_MAX_OUTPUT_PORT_TYPE
+RES[3] <= RES[3].DB_MAX_OUTPUT_PORT_TYPE
+RES[4] <= RES[4].DB_MAX_OUTPUT_PORT_TYPE
+RES[5] <= RES[5].DB_MAX_OUTPUT_PORT_TYPE
+RES[6] <= RES[6].DB_MAX_OUTPUT_PORT_TYPE
+RES[7] <= RES[7].DB_MAX_OUTPUT_PORT_TYPE
+done <= controlbits:swt.d_sw
+
+
+|modExp|controlClk:cntlr
+CLK => CLKf.DATAA
+CLK => i_help[0]~reg0.CLK
+CLK => i_help[1]~reg0.CLK
+CLK => i_help[2]~reg0.CLK
+CLK => i_help[3]~reg0.CLK
+CLK => i_help[4]~reg0.CLK
+CLK => i_help[5]~reg0.CLK
+CLK => i_help[6]~reg0.CLK
+CLK => i_help[7]~reg0.CLK
+CLK => i_help[8]~reg0.CLK
+CLK => i_help[9]~reg0.CLK
+CLK => i_help[10]~reg0.CLK
+CLK => i_help[11]~reg0.CLK
+CLK => i_help[12]~reg0.CLK
+CLK => i_help[13]~reg0.CLK
+CLK => i_help[14]~reg0.CLK
+CLK => i_help[15]~reg0.CLK
+CLK => i_help[16]~reg0.CLK
+CLK => i_help[17]~reg0.CLK
+CLK => i_help[18]~reg0.CLK
+CLK => i_help[19]~reg0.CLK
+CLK => i_help[20]~reg0.CLK
+CLK => i_help[21]~reg0.CLK
+CLK => i_help[22]~reg0.CLK
+CLK => i_help[23]~reg0.CLK
+CLK => i_help[24]~reg0.CLK
+CLK => i_help[25]~reg0.CLK
+CLK => i_help[26]~reg0.CLK
+CLK => i_help[27]~reg0.CLK
+CLK => i_help[28]~reg0.CLK
+CLK => i_help[29]~reg0.CLK
+CLK => i_help[30]~reg0.CLK
+CLK => i_help[31]~reg0.CLK
+CLK => i[0]~reg0.CLK
+CLK => i[1]~reg0.CLK
+CLK => i[2]~reg0.CLK
+CLK => i[3]~reg0.CLK
+CLK => i[4]~reg0.CLK
+CLK => i[5]~reg0.CLK
+CLK => i[6]~reg0.CLK
+CLK => i[7]~reg0.CLK
+CLK => i[8]~reg0.CLK
+CLK => i[9]~reg0.CLK
+CLK => i[10]~reg0.CLK
+CLK => i[11]~reg0.CLK
+CLK => i[12]~reg0.CLK
+CLK => i[13]~reg0.CLK
+CLK => i[14]~reg0.CLK
+CLK => i[15]~reg0.CLK
+CLK => i[16]~reg0.CLK
+CLK => i[17]~reg0.CLK
+CLK => i[18]~reg0.CLK
+CLK => i[19]~reg0.CLK
+CLK => i[20]~reg0.CLK
+CLK => i[21]~reg0.CLK
+CLK => i[22]~reg0.CLK
+CLK => i[23]~reg0.CLK
+CLK => i[24]~reg0.CLK
+CLK => i[25]~reg0.CLK
+CLK => i[26]~reg0.CLK
+CLK => i[27]~reg0.CLK
+CLK => i[28]~reg0.CLK
+CLK => i[29]~reg0.CLK
+CLK => i[30]~reg0.CLK
+CLK => i[31]~reg0.CLK
+CLKf <= CLKf.DB_MAX_OUTPUT_PORT_TYPE
+i[0] <> i[0]~reg0
+i[1] <> i[1]~reg0
+i[2] <> i[2]~reg0
+i[3] <> i[3]~reg0
+i[4] <> i[4]~reg0
+i[5] <> i[5]~reg0
+i[6] <> i[6]~reg0
+i[7] <> i[7]~reg0
+i[8] <> i[8]~reg0
+i[9] <> i[9]~reg0
+i[10] <> i[10]~reg0
+i[11] <> i[11]~reg0
+i[12] <> i[12]~reg0
+i[13] <> i[13]~reg0
+i[14] <> i[14]~reg0
+i[15] <> i[15]~reg0
+i[16] <> i[16]~reg0
+i[17] <> i[17]~reg0
+i[18] <> i[18]~reg0
+i[19] <> i[19]~reg0
+i[20] <> i[20]~reg0
+i[21] <> i[21]~reg0
+i[22] <> i[22]~reg0
+i[23] <> i[23]~reg0
+i[24] <> i[24]~reg0
+i[25] <> i[25]~reg0
+i[26] <> i[26]~reg0
+i[27] <> i[27]~reg0
+i[28] <> i[28]~reg0
+i[29] <> i[29]~reg0
+i[30] <> i[30]~reg0
+i[31] <> i[31]~reg0
+i_help[0] <> i_help[0]~reg0
+i_help[1] <> i_help[1]~reg0
+i_help[2] <> i_help[2]~reg0
+i_help[3] <> i_help[3]~reg0
+i_help[4] <> i_help[4]~reg0
+i_help[5] <> i_help[5]~reg0
+i_help[6] <> i_help[6]~reg0
+i_help[7] <> i_help[7]~reg0
+i_help[8] <> i_help[8]~reg0
+i_help[9] <> i_help[9]~reg0
+i_help[10] <> i_help[10]~reg0
+i_help[11] <> i_help[11]~reg0
+i_help[12] <> i_help[12]~reg0
+i_help[13] <> i_help[13]~reg0
+i_help[14] <> i_help[14]~reg0
+i_help[15] <> i_help[15]~reg0
+i_help[16] <> i_help[16]~reg0
+i_help[17] <> i_help[17]~reg0
+i_help[18] <> i_help[18]~reg0
+i_help[19] <> i_help[19]~reg0
+i_help[20] <> i_help[20]~reg0
+i_help[21] <> i_help[21]~reg0
+i_help[22] <> i_help[22]~reg0
+i_help[23] <> i_help[23]~reg0
+i_help[24] <> i_help[24]~reg0
+i_help[25] <> i_help[25]~reg0
+i_help[26] <> i_help[26]~reg0
+i_help[27] <> i_help[27]~reg0
+i_help[28] <> i_help[28]~reg0
+i_help[29] <> i_help[29]~reg0
+i_help[30] <> i_help[30]~reg0
+i_help[31] <> i_help[31]~reg0
+done <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|controlBits:swt
+clk => e_sw~reg0.CLK
+clk => d_sw~reg0.CLK
+i_h[0] => LessThan0.IN64
+i_h[1] => LessThan0.IN63
+i_h[2] => LessThan0.IN62
+i_h[3] => LessThan0.IN61
+i_h[4] => LessThan0.IN60
+i_h[5] => LessThan0.IN59
+i_h[6] => LessThan0.IN58
+i_h[7] => LessThan0.IN57
+i_h[8] => LessThan0.IN56
+i_h[9] => LessThan0.IN55
+i_h[10] => LessThan0.IN54
+i_h[11] => LessThan0.IN53
+i_h[12] => LessThan0.IN52
+i_h[13] => LessThan0.IN51
+i_h[14] => LessThan0.IN50
+i_h[15] => LessThan0.IN49
+i_h[16] => LessThan0.IN48
+i_h[17] => LessThan0.IN47
+i_h[18] => LessThan0.IN46
+i_h[19] => LessThan0.IN45
+i_h[20] => LessThan0.IN44
+i_h[21] => LessThan0.IN43
+i_h[22] => LessThan0.IN42
+i_h[23] => LessThan0.IN41
+i_h[24] => LessThan0.IN40
+i_h[25] => LessThan0.IN39
+i_h[26] => LessThan0.IN38
+i_h[27] => LessThan0.IN37
+i_h[28] => LessThan0.IN36
+i_h[29] => LessThan0.IN35
+i_h[30] => LessThan0.IN34
+i_h[31] => LessThan0.IN33
+i[0] => Equal0.IN31
+i[0] => Equal1.IN31
+i[0] => Equal2.IN31
+i[0] => Equal3.IN31
+i[0] => Equal4.IN31
+i[0] => Equal5.IN31
+i[0] => Equal6.IN31
+i[0] => Equal7.IN31
+i[1] => Equal0.IN30
+i[1] => Equal1.IN30
+i[1] => Equal2.IN30
+i[1] => Equal3.IN30
+i[1] => Equal4.IN30
+i[1] => Equal5.IN30
+i[1] => Equal6.IN30
+i[1] => Equal7.IN30
+i[2] => Equal0.IN29
+i[2] => Equal1.IN29
+i[2] => Equal2.IN29
+i[2] => Equal3.IN29
+i[2] => Equal4.IN29
+i[2] => Equal5.IN29
+i[2] => Equal6.IN29
+i[2] => Equal7.IN29
+i[3] => Equal0.IN28
+i[3] => Equal1.IN28
+i[3] => Equal2.IN28
+i[3] => Equal3.IN28
+i[3] => Equal4.IN28
+i[3] => Equal5.IN28
+i[3] => Equal6.IN28
+i[3] => Equal7.IN28
+i[4] => Equal0.IN27
+i[4] => Equal1.IN27
+i[4] => Equal2.IN26
+i[4] => Equal3.IN27
+i[4] => Equal4.IN26
+i[4] => Equal5.IN27
+i[4] => Equal6.IN25
+i[4] => Equal7.IN27
+i[5] => Equal0.IN26
+i[5] => Equal1.IN26
+i[5] => Equal2.IN27
+i[5] => Equal3.IN26
+i[5] => Equal4.IN25
+i[5] => Equal5.IN25
+i[5] => Equal6.IN27
+i[5] => Equal7.IN26
+i[6] => Equal0.IN25
+i[6] => Equal1.IN25
+i[6] => Equal2.IN25
+i[6] => Equal3.IN25
+i[6] => Equal4.IN27
+i[6] => Equal5.IN26
+i[6] => Equal6.IN26
+i[6] => Equal7.IN25
+i[7] => Equal0.IN24
+i[7] => Equal1.IN24
+i[7] => Equal2.IN24
+i[7] => Equal3.IN24
+i[7] => Equal4.IN24
+i[7] => Equal5.IN24
+i[7] => Equal6.IN24
+i[7] => Equal7.IN24
+i[8] => Equal0.IN23
+i[8] => Equal1.IN23
+i[8] => Equal2.IN23
+i[8] => Equal3.IN23
+i[8] => Equal4.IN23
+i[8] => Equal5.IN23
+i[8] => Equal6.IN23
+i[8] => Equal7.IN23
+i[9] => Equal0.IN22
+i[9] => Equal1.IN22
+i[9] => Equal2.IN22
+i[9] => Equal3.IN22
+i[9] => Equal4.IN22
+i[9] => Equal5.IN22
+i[9] => Equal6.IN22
+i[9] => Equal7.IN22
+i[10] => Equal0.IN21
+i[10] => Equal1.IN21
+i[10] => Equal2.IN21
+i[10] => Equal3.IN21
+i[10] => Equal4.IN21
+i[10] => Equal5.IN21
+i[10] => Equal6.IN21
+i[10] => Equal7.IN21
+i[11] => Equal0.IN20
+i[11] => Equal1.IN20
+i[11] => Equal2.IN20
+i[11] => Equal3.IN20
+i[11] => Equal4.IN20
+i[11] => Equal5.IN20
+i[11] => Equal6.IN20
+i[11] => Equal7.IN20
+i[12] => Equal0.IN19
+i[12] => Equal1.IN19
+i[12] => Equal2.IN19
+i[12] => Equal3.IN19
+i[12] => Equal4.IN19
+i[12] => Equal5.IN19
+i[12] => Equal6.IN19
+i[12] => Equal7.IN19
+i[13] => Equal0.IN18
+i[13] => Equal1.IN18
+i[13] => Equal2.IN18
+i[13] => Equal3.IN18
+i[13] => Equal4.IN18
+i[13] => Equal5.IN18
+i[13] => Equal6.IN18
+i[13] => Equal7.IN18
+i[14] => Equal0.IN17
+i[14] => Equal1.IN17
+i[14] => Equal2.IN17
+i[14] => Equal3.IN17
+i[14] => Equal4.IN17
+i[14] => Equal5.IN17
+i[14] => Equal6.IN17
+i[14] => Equal7.IN17
+i[15] => Equal0.IN16
+i[15] => Equal1.IN16
+i[15] => Equal2.IN16
+i[15] => Equal3.IN16
+i[15] => Equal4.IN16
+i[15] => Equal5.IN16
+i[15] => Equal6.IN16
+i[15] => Equal7.IN16
+i[16] => Equal0.IN15
+i[16] => Equal1.IN15
+i[16] => Equal2.IN15
+i[16] => Equal3.IN15
+i[16] => Equal4.IN15
+i[16] => Equal5.IN15
+i[16] => Equal6.IN15
+i[16] => Equal7.IN15
+i[17] => Equal0.IN14
+i[17] => Equal1.IN14
+i[17] => Equal2.IN14
+i[17] => Equal3.IN14
+i[17] => Equal4.IN14
+i[17] => Equal5.IN14
+i[17] => Equal6.IN14
+i[17] => Equal7.IN14
+i[18] => Equal0.IN13
+i[18] => Equal1.IN13
+i[18] => Equal2.IN13
+i[18] => Equal3.IN13
+i[18] => Equal4.IN13
+i[18] => Equal5.IN13
+i[18] => Equal6.IN13
+i[18] => Equal7.IN13
+i[19] => Equal0.IN12
+i[19] => Equal1.IN12
+i[19] => Equal2.IN12
+i[19] => Equal3.IN12
+i[19] => Equal4.IN12
+i[19] => Equal5.IN12
+i[19] => Equal6.IN12
+i[19] => Equal7.IN12
+i[20] => Equal0.IN11
+i[20] => Equal1.IN11
+i[20] => Equal2.IN11
+i[20] => Equal3.IN11
+i[20] => Equal4.IN11
+i[20] => Equal5.IN11
+i[20] => Equal6.IN11
+i[20] => Equal7.IN11
+i[21] => Equal0.IN10
+i[21] => Equal1.IN10
+i[21] => Equal2.IN10
+i[21] => Equal3.IN10
+i[21] => Equal4.IN10
+i[21] => Equal5.IN10
+i[21] => Equal6.IN10
+i[21] => Equal7.IN10
+i[22] => Equal0.IN9
+i[22] => Equal1.IN9
+i[22] => Equal2.IN9
+i[22] => Equal3.IN9
+i[22] => Equal4.IN9
+i[22] => Equal5.IN9
+i[22] => Equal6.IN9
+i[22] => Equal7.IN9
+i[23] => Equal0.IN8
+i[23] => Equal1.IN8
+i[23] => Equal2.IN8
+i[23] => Equal3.IN8
+i[23] => Equal4.IN8
+i[23] => Equal5.IN8
+i[23] => Equal6.IN8
+i[23] => Equal7.IN8
+i[24] => Equal0.IN7
+i[24] => Equal1.IN7
+i[24] => Equal2.IN7
+i[24] => Equal3.IN7
+i[24] => Equal4.IN7
+i[24] => Equal5.IN7
+i[24] => Equal6.IN7
+i[24] => Equal7.IN7
+i[25] => Equal0.IN6
+i[25] => Equal1.IN6
+i[25] => Equal2.IN6
+i[25] => Equal3.IN6
+i[25] => Equal4.IN6
+i[25] => Equal5.IN6
+i[25] => Equal6.IN6
+i[25] => Equal7.IN6
+i[26] => Equal0.IN5
+i[26] => Equal1.IN5
+i[26] => Equal2.IN5
+i[26] => Equal3.IN5
+i[26] => Equal4.IN5
+i[26] => Equal5.IN5
+i[26] => Equal6.IN5
+i[26] => Equal7.IN5
+i[27] => Equal0.IN4
+i[27] => Equal1.IN4
+i[27] => Equal2.IN4
+i[27] => Equal3.IN4
+i[27] => Equal4.IN4
+i[27] => Equal5.IN4
+i[27] => Equal6.IN4
+i[27] => Equal7.IN4
+i[28] => Equal0.IN3
+i[28] => Equal1.IN3
+i[28] => Equal2.IN3
+i[28] => Equal3.IN3
+i[28] => Equal4.IN3
+i[28] => Equal5.IN3
+i[28] => Equal6.IN3
+i[28] => Equal7.IN3
+i[29] => Equal0.IN2
+i[29] => Equal1.IN2
+i[29] => Equal2.IN2
+i[29] => Equal3.IN2
+i[29] => Equal4.IN2
+i[29] => Equal5.IN2
+i[29] => Equal6.IN2
+i[29] => Equal7.IN2
+i[30] => Equal0.IN1
+i[30] => Equal1.IN1
+i[30] => Equal2.IN1
+i[30] => Equal3.IN1
+i[30] => Equal4.IN1
+i[30] => Equal5.IN1
+i[30] => Equal6.IN1
+i[30] => Equal7.IN1
+i[31] => Equal0.IN0
+i[31] => Equal1.IN0
+i[31] => Equal2.IN0
+i[31] => Equal3.IN0
+i[31] => Equal4.IN0
+i[31] => Equal5.IN0
+i[31] => Equal6.IN0
+i[31] => Equal7.IN0
+e[0] => e_sw.DATAB
+e[1] => e_sw.DATAB
+e[2] => e_sw.DATAB
+e[3] => e_sw.DATAB
+e[4] => e_sw.DATAB
+e[5] => e_sw.DATAB
+e[6] => e_sw.DATAB
+e[7] => e_sw.DATAB
+f_sw <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+e_sw <= e_sw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+d_sw <= d_sw~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop
+clk => modmultcell:stCell.clk
+clk => modmultcell:ndCell.clk
+clk => modmultcell:rdCell.clk
+clk => modmultcell:thCell.clk
+a[0] => modmultcell:thCell.a2
+a[1] => modmultcell:thCell.a1
+a[2] => modmultcell:rdCell.a2
+a[3] => modmultcell:rdCell.a1
+a[4] => modmultcell:ndCell.a2
+a[5] => modmultcell:ndCell.a1
+a[6] => modmultcell:stCell.a2
+a[7] => modmultcell:stCell.a1
+m[0] => modmultcell:thCell.m2
+m[1] => modmultcell:thCell.m1
+m[2] => modmultcell:rdCell.m2
+m[3] => modmultcell:rdCell.m1
+m[4] => modmultcell:ndCell.m2
+m[5] => modmultcell:ndCell.m1
+m[6] => modmultcell:stCell.m2
+m[7] => modmultcell:stCell.m1
+b => modmultcell:thCell.b
+q => modmultcell:thCell.q
+s <= modmultcell:thCell.sOut
+
+
+|modExp|modMult:multTop|modMultCell:stCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multTop|modMultCell:stCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:stCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:ndCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:rdCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multTop|modMultCell:thCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multTop|modMultCell:thCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot
+clk => modmultcell:stCell.clk
+clk => modmultcell:ndCell.clk
+clk => modmultcell:rdCell.clk
+clk => modmultcell:thCell.clk
+a[0] => modmultcell:thCell.a2
+a[1] => modmultcell:thCell.a1
+a[2] => modmultcell:rdCell.a2
+a[3] => modmultcell:rdCell.a1
+a[4] => modmultcell:ndCell.a2
+a[5] => modmultcell:ndCell.a1
+a[6] => modmultcell:stCell.a2
+a[7] => modmultcell:stCell.a1
+m[0] => modmultcell:thCell.m2
+m[1] => modmultcell:thCell.m1
+m[2] => modmultcell:rdCell.m2
+m[3] => modmultcell:rdCell.m1
+m[4] => modmultcell:ndCell.m2
+m[5] => modmultcell:ndCell.m1
+m[6] => modmultcell:stCell.m2
+m[7] => modmultcell:stCell.m1
+b => modmultcell:thCell.b
+q => modmultcell:thCell.q
+s <= modmultcell:thCell.sOut
+
+
+|modExp|modMult:multBot|modMultCell:stCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multBot|modMultCell:stCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:stCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:ndCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:rdCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell
+a1 => n[0].IN1
+a2 => n[1].IN0
+m1 => n[2].IN1
+m2 => n[3].IN0
+b => n[1].IN1
+b => dflipflop:flipB.d
+bff <> bff
+q => n[3].IN1
+q => dflipflop:flipQ.d
+qff <> qff
+clk => dflipflop:flipS.clk
+clk => dflipflop:flipC1T.clk
+clk => dflipflop:flipC1B.clk
+clk => dflipflop:flipC2.clk
+clk => dflipflop:flipB.clk
+clk => dflipflop:flipQ.clk
+s => fulladder:add2.b
+sOut <= dflipflop:flipS.q
+
+
+|modExp|modMult:multBot|modMultCell:thCell|fullAdder:add1
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|fullAdder:add2
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|fullAdder:add3
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|fullAdder:add4
+a => s.IN0
+a => cOut.IN0
+b => s.IN1
+b => cOut.IN1
+cIn => s.IN1
+cIn => cOut.IN1
+s <= s.DB_MAX_OUTPUT_PORT_TYPE
+cOut <= cOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipS
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipC1T
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipC1B
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipC2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipB
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|modMult:multBot|modMultCell:thCell|dflipflop:flipQ
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|directionHandler:dirH
+clk => ~NO_FANOUT~
+ry => qy.DATAB
+ry => sy.DATAA
+rz => qz.DATAB
+rz => sz.DATAA
+qy <= qy.DB_MAX_OUTPUT_PORT_TYPE
+qz <= qz.DB_MAX_OUTPUT_PORT_TYPE
+sy <= sy.DB_MAX_OUTPUT_PORT_TYPE
+sz <= sz.DB_MAX_OUTPUT_PORT_TYPE
+f_sw => qy.OUTPUTSELECT
+f_sw => sy.OUTPUTSELECT
+f_sw => qz.OUTPUTSELECT
+f_sw => sz.OUTPUTSELECT
+
+
+|modExp|shift_register:z0shift
+d => shift_reg.DATAA
+clk => load.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => shift_reg[4].CLK
+clk => shift_reg[5].CLK
+clk => shift_reg[6].CLK
+clk => shift_reg[7].CLK
+init_val[0] => shift_reg.DATAB
+init_val[1] => shift_reg.DATAB
+init_val[2] => shift_reg.DATAB
+init_val[3] => shift_reg.DATAB
+init_val[4] => shift_reg.DATAB
+init_val[5] => shift_reg.DATAB
+init_val[6] => shift_reg.DATAB
+init_val[7] => shift_reg.DATAB
+reg[0] <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+reg[1] <= shift_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+reg[2] <= shift_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+reg[3] <= shift_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+reg[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+reg[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+reg[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+reg[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|shift_register:y0shift
+d => shift_reg.DATAA
+clk => load.CLK
+clk => shift_reg[0].CLK
+clk => shift_reg[1].CLK
+clk => shift_reg[2].CLK
+clk => shift_reg[3].CLK
+clk => shift_reg[4].CLK
+clk => shift_reg[5].CLK
+clk => shift_reg[6].CLK
+clk => shift_reg[7].CLK
+init_val[0] => shift_reg.DATAB
+init_val[1] => shift_reg.DATAB
+init_val[2] => shift_reg.DATAB
+init_val[3] => shift_reg.DATAB
+init_val[4] => shift_reg.DATAB
+init_val[5] => shift_reg.DATAB
+init_val[6] => shift_reg.DATAB
+init_val[7] => shift_reg.DATAB
+reg[0] <= shift_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+reg[1] <= shift_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+reg[2] <= shift_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+reg[3] <= shift_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+reg[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+reg[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
+reg[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
+reg[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|modExp|dubVec:dubZ
+a[0] => b.DATAB
+a[1] => b.DATAB
+a[2] => b.DATAB
+a[3] => b.DATAB
+a[4] => b.DATAB
+a[5] => b.DATAB
+a[6] => b.DATAB
+a[7] => b.DATAB
+b[0] <> b[0]~reg0
+b[1] <> b[1]~reg0
+b[2] <> b[2]~reg0
+b[3] <> b[3]~reg0
+b[4] <> b[4]~reg0
+b[5] <> b[5]~reg0
+b[6] <> b[6]~reg0
+b[7] <> b[7]~reg0
+clk => b[0]~reg0.CLK
+clk => b[1]~reg0.CLK
+clk => b[2]~reg0.CLK
+clk => b[3]~reg0.CLK
+clk => b[4]~reg0.CLK
+clk => b[5]~reg0.CLK
+clk => b[6]~reg0.CLK
+clk => b[7]~reg0.CLK
+condition1 => process_0.IN0
+condition2 => process_0.IN1
+
+
+|modExp|dubVec:dubY
+a[0] => b.DATAB
+a[1] => b.DATAB
+a[2] => b.DATAB
+a[3] => b.DATAB
+a[4] => b.DATAB
+a[5] => b.DATAB
+a[6] => b.DATAB
+a[7] => b.DATAB
+b[0] <> b[0]~reg0
+b[1] <> b[1]~reg0
+b[2] <> b[2]~reg0
+b[3] <> b[3]~reg0
+b[4] <> b[4]~reg0
+b[5] <> b[5]~reg0
+b[6] <> b[6]~reg0
+b[7] <> b[7]~reg0
+clk => b[0]~reg0.CLK
+clk => b[1]~reg0.CLK
+clk => b[2]~reg0.CLK
+clk => b[3]~reg0.CLK
+clk => b[4]~reg0.CLK
+clk => b[5]~reg0.CLK
+clk => b[6]~reg0.CLK
+clk => b[7]~reg0.CLK
+condition1 => process_0.IN0
+condition2 => process_0.IN1
+
+

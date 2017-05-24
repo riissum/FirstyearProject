@@ -9,7 +9,7 @@ RES[5] <= shift_register:RES0.res[5]
 RES[6] <= shift_register:RES0.res[6]
 RES[7] <= shift_register:RES0.res[7]
 bMoni <= listb:BFF0.bOut
-rMoni <= listr:R0.TT
+rMoni <= lists:R0.TT
 H0[0] <= hexdisp:HE0.HEX[0]
 H0[1] <= hexdisp:HE0.HEX[1]
 H0[2] <= hexdisp:HE0.HEX[2]
@@ -590,7 +590,7 @@ clk => i[30].CLK
 clk => i[31].CLK
 
 
-|test|ListR:R0
+|test|ListS:R0
 S => sOut.DATAB
 S => sOut.DATAB
 sOut <= sOut.DB_MAX_OUTPUT_PORT_TYPE

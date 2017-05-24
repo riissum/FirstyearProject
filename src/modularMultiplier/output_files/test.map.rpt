@@ -1,5 +1,5 @@
 Analysis & Synthesis report for test
-Mon May 22 13:54:39 2017
+Mon May 22 14:32:52 2017
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -49,7 +49,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 22 13:54:39 2017           ;
+; Analysis & Synthesis Status        ; Successful - Mon May 22 14:32:52 2017           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; test                                            ;
 ; Top-level Entity Name              ; test                                            ;
@@ -209,7 +209,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; |test                          ; 111 (0)           ; 81 (0)       ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |test                                            ; work         ;
 ;    |ListB:BFF0|                ; 36 (36)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListB:BFF0                                 ; work         ;
 ;    |ListQ:QFF0|                ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListQ:QFF0                                 ; work         ;
-;    |ListR:R0|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListR:R0                                   ; work         ;
+;    |ListS:R0|                  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|ListS:R0                                   ; work         ;
 ;    |controlClk:cntlr|          ; 42 (42)           ; 32 (32)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|controlClk:cntlr                           ; work         ;
 ;    |hexDisp:HE0|               ; 12 (12)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE0                                ; work         ;
 ;    |hexDisp:HE1|               ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |test|hexDisp:HE1                                ; work         ;
@@ -309,7 +309,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; modMultCell:ndCell|dflipflop:flipC1B|q  ; Stuck at GND due to stuck port data_in ;
 ; modMultCell:ndCell|dflipflop:flipS|q    ; Stuck at GND due to stuck port data_in ;
 ; ListQ:QFF0|i[2]                         ; Merged with ListB:BFF0|i[2]            ;
-; ListR:R0|i[2]                           ; Merged with ListB:BFF0|i[2]            ;
+; ListS:R0|i[2]                           ; Merged with ListB:BFF0|i[2]            ;
 ; hexDisp:HE0|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
 ; hexDisp:HE1|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
 ; hexDisp:HE2|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
@@ -319,7 +319,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
 ; hexDisp:HE7|i[2]                        ; Merged with ListB:BFF0|i[2]            ;
 ; ListQ:QFF0|i[1]                         ; Merged with ListB:BFF0|i[1]            ;
-; ListR:R0|i[1]                           ; Merged with ListB:BFF0|i[1]            ;
+; ListS:R0|i[1]                           ; Merged with ListB:BFF0|i[1]            ;
 ; hexDisp:HE0|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
 ; hexDisp:HE1|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
 ; hexDisp:HE2|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
@@ -329,7 +329,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
 ; hexDisp:HE7|i[1]                        ; Merged with ListB:BFF0|i[1]            ;
 ; ListQ:QFF0|i[0]                         ; Merged with ListB:BFF0|i[0]            ;
-; ListR:R0|i[0]                           ; Merged with ListB:BFF0|i[0]            ;
+; ListS:R0|i[0]                           ; Merged with ListB:BFF0|i[0]            ;
 ; hexDisp:HE0|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
 ; hexDisp:HE1|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
 ; hexDisp:HE2|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
@@ -339,7 +339,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
 ; hexDisp:HE7|i[0]                        ; Merged with ListB:BFF0|i[0]            ;
 ; ListQ:QFF0|i[3]                         ; Merged with ListB:BFF0|i[3]            ;
-; ListR:R0|i[3]                           ; Merged with ListB:BFF0|i[3]            ;
+; ListS:R0|i[3]                           ; Merged with ListB:BFF0|i[3]            ;
 ; hexDisp:HE0|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
 ; hexDisp:HE1|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
 ; hexDisp:HE2|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
@@ -349,7 +349,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
 ; hexDisp:HE7|i[3]                        ; Merged with ListB:BFF0|i[3]            ;
 ; ListQ:QFF0|i[4]                         ; Merged with ListB:BFF0|i[4]            ;
-; ListR:R0|i[4]                           ; Merged with ListB:BFF0|i[4]            ;
+; ListS:R0|i[4]                           ; Merged with ListB:BFF0|i[4]            ;
 ; hexDisp:HE0|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
 ; hexDisp:HE1|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
 ; hexDisp:HE2|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
@@ -359,7 +359,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
 ; hexDisp:HE7|i[4]                        ; Merged with ListB:BFF0|i[4]            ;
 ; ListQ:QFF0|i[5]                         ; Merged with ListB:BFF0|i[5]            ;
-; ListR:R0|i[5]                           ; Merged with ListB:BFF0|i[5]            ;
+; ListS:R0|i[5]                           ; Merged with ListB:BFF0|i[5]            ;
 ; hexDisp:HE0|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
 ; hexDisp:HE1|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
 ; hexDisp:HE2|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
@@ -369,7 +369,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
 ; hexDisp:HE7|i[5]                        ; Merged with ListB:BFF0|i[5]            ;
 ; ListQ:QFF0|i[6]                         ; Merged with ListB:BFF0|i[6]            ;
-; ListR:R0|i[6]                           ; Merged with ListB:BFF0|i[6]            ;
+; ListS:R0|i[6]                           ; Merged with ListB:BFF0|i[6]            ;
 ; hexDisp:HE0|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
 ; hexDisp:HE1|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
 ; hexDisp:HE2|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
@@ -379,7 +379,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
 ; hexDisp:HE7|i[6]                        ; Merged with ListB:BFF0|i[6]            ;
 ; ListQ:QFF0|i[7]                         ; Merged with ListB:BFF0|i[7]            ;
-; ListR:R0|i[7]                           ; Merged with ListB:BFF0|i[7]            ;
+; ListS:R0|i[7]                           ; Merged with ListB:BFF0|i[7]            ;
 ; hexDisp:HE0|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
 ; hexDisp:HE1|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
 ; hexDisp:HE2|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
@@ -389,7 +389,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
 ; hexDisp:HE7|i[7]                        ; Merged with ListB:BFF0|i[7]            ;
 ; ListQ:QFF0|i[8]                         ; Merged with ListB:BFF0|i[8]            ;
-; ListR:R0|i[8]                           ; Merged with ListB:BFF0|i[8]            ;
+; ListS:R0|i[8]                           ; Merged with ListB:BFF0|i[8]            ;
 ; hexDisp:HE0|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
 ; hexDisp:HE1|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
 ; hexDisp:HE2|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
@@ -399,7 +399,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
 ; hexDisp:HE7|i[8]                        ; Merged with ListB:BFF0|i[8]            ;
 ; ListQ:QFF0|i[9]                         ; Merged with ListB:BFF0|i[9]            ;
-; ListR:R0|i[9]                           ; Merged with ListB:BFF0|i[9]            ;
+; ListS:R0|i[9]                           ; Merged with ListB:BFF0|i[9]            ;
 ; hexDisp:HE0|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
 ; hexDisp:HE1|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
 ; hexDisp:HE2|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
@@ -409,7 +409,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
 ; hexDisp:HE7|i[9]                        ; Merged with ListB:BFF0|i[9]            ;
 ; ListQ:QFF0|i[10]                        ; Merged with ListB:BFF0|i[10]           ;
-; ListR:R0|i[10]                          ; Merged with ListB:BFF0|i[10]           ;
+; ListS:R0|i[10]                          ; Merged with ListB:BFF0|i[10]           ;
 ; hexDisp:HE0|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
 ; hexDisp:HE1|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
 ; hexDisp:HE2|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
@@ -419,7 +419,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
 ; hexDisp:HE7|i[10]                       ; Merged with ListB:BFF0|i[10]           ;
 ; ListQ:QFF0|i[11]                        ; Merged with ListB:BFF0|i[11]           ;
-; ListR:R0|i[11]                          ; Merged with ListB:BFF0|i[11]           ;
+; ListS:R0|i[11]                          ; Merged with ListB:BFF0|i[11]           ;
 ; hexDisp:HE0|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
 ; hexDisp:HE1|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
 ; hexDisp:HE2|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
@@ -429,7 +429,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
 ; hexDisp:HE7|i[11]                       ; Merged with ListB:BFF0|i[11]           ;
 ; ListQ:QFF0|i[12]                        ; Merged with ListB:BFF0|i[12]           ;
-; ListR:R0|i[12]                          ; Merged with ListB:BFF0|i[12]           ;
+; ListS:R0|i[12]                          ; Merged with ListB:BFF0|i[12]           ;
 ; hexDisp:HE0|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
 ; hexDisp:HE1|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
 ; hexDisp:HE2|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
@@ -439,7 +439,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
 ; hexDisp:HE7|i[12]                       ; Merged with ListB:BFF0|i[12]           ;
 ; ListQ:QFF0|i[13]                        ; Merged with ListB:BFF0|i[13]           ;
-; ListR:R0|i[13]                          ; Merged with ListB:BFF0|i[13]           ;
+; ListS:R0|i[13]                          ; Merged with ListB:BFF0|i[13]           ;
 ; hexDisp:HE0|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
 ; hexDisp:HE1|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
 ; hexDisp:HE2|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
@@ -449,7 +449,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
 ; hexDisp:HE7|i[13]                       ; Merged with ListB:BFF0|i[13]           ;
 ; ListQ:QFF0|i[14]                        ; Merged with ListB:BFF0|i[14]           ;
-; ListR:R0|i[14]                          ; Merged with ListB:BFF0|i[14]           ;
+; ListS:R0|i[14]                          ; Merged with ListB:BFF0|i[14]           ;
 ; hexDisp:HE0|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
 ; hexDisp:HE1|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
 ; hexDisp:HE2|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
@@ -459,7 +459,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
 ; hexDisp:HE7|i[14]                       ; Merged with ListB:BFF0|i[14]           ;
 ; ListQ:QFF0|i[15]                        ; Merged with ListB:BFF0|i[15]           ;
-; ListR:R0|i[15]                          ; Merged with ListB:BFF0|i[15]           ;
+; ListS:R0|i[15]                          ; Merged with ListB:BFF0|i[15]           ;
 ; hexDisp:HE0|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
 ; hexDisp:HE1|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
 ; hexDisp:HE2|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
@@ -469,7 +469,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
 ; hexDisp:HE7|i[15]                       ; Merged with ListB:BFF0|i[15]           ;
 ; ListQ:QFF0|i[16]                        ; Merged with ListB:BFF0|i[16]           ;
-; ListR:R0|i[16]                          ; Merged with ListB:BFF0|i[16]           ;
+; ListS:R0|i[16]                          ; Merged with ListB:BFF0|i[16]           ;
 ; hexDisp:HE0|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
 ; hexDisp:HE1|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
 ; hexDisp:HE2|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
@@ -479,7 +479,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
 ; hexDisp:HE7|i[16]                       ; Merged with ListB:BFF0|i[16]           ;
 ; ListQ:QFF0|i[17]                        ; Merged with ListB:BFF0|i[17]           ;
-; ListR:R0|i[17]                          ; Merged with ListB:BFF0|i[17]           ;
+; ListS:R0|i[17]                          ; Merged with ListB:BFF0|i[17]           ;
 ; hexDisp:HE0|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
 ; hexDisp:HE1|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
 ; hexDisp:HE2|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
@@ -489,7 +489,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
 ; hexDisp:HE7|i[17]                       ; Merged with ListB:BFF0|i[17]           ;
 ; ListQ:QFF0|i[18]                        ; Merged with ListB:BFF0|i[18]           ;
-; ListR:R0|i[18]                          ; Merged with ListB:BFF0|i[18]           ;
+; ListS:R0|i[18]                          ; Merged with ListB:BFF0|i[18]           ;
 ; hexDisp:HE0|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
 ; hexDisp:HE1|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
 ; hexDisp:HE2|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
@@ -499,7 +499,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
 ; hexDisp:HE7|i[18]                       ; Merged with ListB:BFF0|i[18]           ;
 ; ListQ:QFF0|i[19]                        ; Merged with ListB:BFF0|i[19]           ;
-; ListR:R0|i[19]                          ; Merged with ListB:BFF0|i[19]           ;
+; ListS:R0|i[19]                          ; Merged with ListB:BFF0|i[19]           ;
 ; hexDisp:HE0|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
 ; hexDisp:HE1|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
 ; hexDisp:HE2|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
@@ -509,7 +509,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
 ; hexDisp:HE7|i[19]                       ; Merged with ListB:BFF0|i[19]           ;
 ; ListQ:QFF0|i[20]                        ; Merged with ListB:BFF0|i[20]           ;
-; ListR:R0|i[20]                          ; Merged with ListB:BFF0|i[20]           ;
+; ListS:R0|i[20]                          ; Merged with ListB:BFF0|i[20]           ;
 ; hexDisp:HE0|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
 ; hexDisp:HE1|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
 ; hexDisp:HE2|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
@@ -519,7 +519,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
 ; hexDisp:HE7|i[20]                       ; Merged with ListB:BFF0|i[20]           ;
 ; ListQ:QFF0|i[21]                        ; Merged with ListB:BFF0|i[21]           ;
-; ListR:R0|i[21]                          ; Merged with ListB:BFF0|i[21]           ;
+; ListS:R0|i[21]                          ; Merged with ListB:BFF0|i[21]           ;
 ; hexDisp:HE0|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
 ; hexDisp:HE1|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
 ; hexDisp:HE2|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
@@ -529,7 +529,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
 ; hexDisp:HE7|i[21]                       ; Merged with ListB:BFF0|i[21]           ;
 ; ListQ:QFF0|i[22]                        ; Merged with ListB:BFF0|i[22]           ;
-; ListR:R0|i[22]                          ; Merged with ListB:BFF0|i[22]           ;
+; ListS:R0|i[22]                          ; Merged with ListB:BFF0|i[22]           ;
 ; hexDisp:HE0|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
 ; hexDisp:HE1|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
 ; hexDisp:HE2|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
@@ -539,7 +539,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
 ; hexDisp:HE7|i[22]                       ; Merged with ListB:BFF0|i[22]           ;
 ; ListQ:QFF0|i[23]                        ; Merged with ListB:BFF0|i[23]           ;
-; ListR:R0|i[23]                          ; Merged with ListB:BFF0|i[23]           ;
+; ListS:R0|i[23]                          ; Merged with ListB:BFF0|i[23]           ;
 ; hexDisp:HE0|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
 ; hexDisp:HE1|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
 ; hexDisp:HE2|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
@@ -549,7 +549,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
 ; hexDisp:HE7|i[23]                       ; Merged with ListB:BFF0|i[23]           ;
 ; ListQ:QFF0|i[24]                        ; Merged with ListB:BFF0|i[24]           ;
-; ListR:R0|i[24]                          ; Merged with ListB:BFF0|i[24]           ;
+; ListS:R0|i[24]                          ; Merged with ListB:BFF0|i[24]           ;
 ; hexDisp:HE0|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
 ; hexDisp:HE1|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
 ; hexDisp:HE2|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
@@ -559,7 +559,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
 ; hexDisp:HE7|i[24]                       ; Merged with ListB:BFF0|i[24]           ;
 ; ListQ:QFF0|i[25]                        ; Merged with ListB:BFF0|i[25]           ;
-; ListR:R0|i[25]                          ; Merged with ListB:BFF0|i[25]           ;
+; ListS:R0|i[25]                          ; Merged with ListB:BFF0|i[25]           ;
 ; hexDisp:HE0|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
 ; hexDisp:HE1|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
 ; hexDisp:HE2|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
@@ -569,7 +569,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
 ; hexDisp:HE7|i[25]                       ; Merged with ListB:BFF0|i[25]           ;
 ; ListQ:QFF0|i[26]                        ; Merged with ListB:BFF0|i[26]           ;
-; ListR:R0|i[26]                          ; Merged with ListB:BFF0|i[26]           ;
+; ListS:R0|i[26]                          ; Merged with ListB:BFF0|i[26]           ;
 ; hexDisp:HE0|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
 ; hexDisp:HE1|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
 ; hexDisp:HE2|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
@@ -579,7 +579,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
 ; hexDisp:HE7|i[26]                       ; Merged with ListB:BFF0|i[26]           ;
 ; ListQ:QFF0|i[27]                        ; Merged with ListB:BFF0|i[27]           ;
-; ListR:R0|i[27]                          ; Merged with ListB:BFF0|i[27]           ;
+; ListS:R0|i[27]                          ; Merged with ListB:BFF0|i[27]           ;
 ; hexDisp:HE0|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
 ; hexDisp:HE1|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
 ; hexDisp:HE2|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
@@ -589,7 +589,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
 ; hexDisp:HE7|i[27]                       ; Merged with ListB:BFF0|i[27]           ;
 ; ListQ:QFF0|i[28]                        ; Merged with ListB:BFF0|i[28]           ;
-; ListR:R0|i[28]                          ; Merged with ListB:BFF0|i[28]           ;
+; ListS:R0|i[28]                          ; Merged with ListB:BFF0|i[28]           ;
 ; hexDisp:HE0|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
 ; hexDisp:HE1|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
 ; hexDisp:HE2|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
@@ -599,7 +599,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
 ; hexDisp:HE7|i[28]                       ; Merged with ListB:BFF0|i[28]           ;
 ; ListQ:QFF0|i[29]                        ; Merged with ListB:BFF0|i[29]           ;
-; ListR:R0|i[29]                          ; Merged with ListB:BFF0|i[29]           ;
+; ListS:R0|i[29]                          ; Merged with ListB:BFF0|i[29]           ;
 ; hexDisp:HE0|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
 ; hexDisp:HE1|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
 ; hexDisp:HE2|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
@@ -609,7 +609,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
 ; hexDisp:HE7|i[29]                       ; Merged with ListB:BFF0|i[29]           ;
 ; ListQ:QFF0|i[30]                        ; Merged with ListB:BFF0|i[30]           ;
-; ListR:R0|i[30]                          ; Merged with ListB:BFF0|i[30]           ;
+; ListS:R0|i[30]                          ; Merged with ListB:BFF0|i[30]           ;
 ; hexDisp:HE0|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
 ; hexDisp:HE1|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
 ; hexDisp:HE2|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
@@ -619,7 +619,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; hexDisp:HE6|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
 ; hexDisp:HE7|i[30]                       ; Merged with ListB:BFF0|i[30]           ;
 ; ListQ:QFF0|i[31]                        ; Merged with ListB:BFF0|i[31]           ;
-; ListR:R0|i[31]                          ; Merged with ListB:BFF0|i[31]           ;
+; ListS:R0|i[31]                          ; Merged with ListB:BFF0|i[31]           ;
 ; hexDisp:HE0|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
 ; hexDisp:HE1|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
 ; hexDisp:HE2|i[31]                       ; Merged with ListB:BFF0|i[31]           ;
@@ -743,7 +743,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon May 22 13:54:36 2017
+    Info: Processing started: Mon May 22 14:32:49 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off modularMultiplier -c test
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 20 design units, including 10 entities, in source file test.vhd
@@ -752,7 +752,7 @@ Info (12021): Found 20 design units, including 10 entities, in source file test.
     Info (12022): Found design unit 3: modMultCell-modMult
     Info (12022): Found design unit 4: fullAdder-add
     Info (12022): Found design unit 5: shift_register-shiftRight
-    Info (12022): Found design unit 6: ListR-getR
+    Info (12022): Found design unit 6: ListS-getS
     Info (12022): Found design unit 7: ListB-getB
     Info (12022): Found design unit 8: ListQ-getQ
     Info (12022): Found design unit 9: dflipflop-flip
@@ -762,7 +762,7 @@ Info (12021): Found 20 design units, including 10 entities, in source file test.
     Info (12023): Found entity 3: modMultCell
     Info (12023): Found entity 4: fullAdder
     Info (12023): Found entity 5: shift_register
-    Info (12023): Found entity 6: ListR
+    Info (12023): Found entity 6: ListS
     Info (12023): Found entity 7: ListB
     Info (12023): Found entity 8: ListQ
     Info (12023): Found entity 9: dflipflop
@@ -777,29 +777,29 @@ Info (12129): Elaborating entity "modMultCell" using architecture "A:modmult" fo
 Info (12129): Elaborating entity "fullAdder" using architecture "A:add" for hierarchy "modMultCell:stCell|fullAdder:add1"
 Info (12129): Elaborating entity "dflipflop" using architecture "A:flip" for hierarchy "modMultCell:stCell|dflipflop:flipS"
 Info (12129): Elaborating entity "ListB" using architecture "A:getb" for hierarchy "ListB:BFF0"
-Warning (10492): VHDL Process Statement warning at test.vhd(400): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(401): signal "L" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(401): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(402): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "L" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(403): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "ListQ" using architecture "A:getq" for hierarchy "ListQ:QFF0"
-Warning (10492): VHDL Process Statement warning at test.vhd(428): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(429): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12129): Elaborating entity "ListR" using architecture "A:getr" for hierarchy "ListR:R0"
-Warning (10492): VHDL Process Statement warning at test.vhd(366): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(368): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(369): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(371): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(430): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(431): signal "d" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (12129): Elaborating entity "ListS" using architecture "A:gets" for hierarchy "ListS:R0"
+Warning (10492): VHDL Process Statement warning at test.vhd(368): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(370): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(371): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(373): signal "S" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "shift_register" using architecture "A:shiftright" for hierarchy "shift_register:RES0"
 Info (12129): Elaborating entity "hexDisp" using architecture "A:display" for hierarchy "hexDisp:HE0"
-Warning (10492): VHDL Process Statement warning at test.vhd(478): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at test.vhd(479): signal "N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at test.vhd(476): inferring latch(es) for signal or variable "HEX", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "HEX[0]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[1]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[2]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[3]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[4]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[5]" at test.vhd(476)
-Info (10041): Inferred latch for "HEX[6]" at test.vhd(476)
+Warning (10492): VHDL Process Statement warning at test.vhd(480): signal "i" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at test.vhd(481): signal "N" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10631): VHDL Process Statement warning at test.vhd(478): inferring latch(es) for signal or variable "HEX", which holds its previous value in one or more paths through the process
+Info (10041): Inferred latch for "HEX[0]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[1]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[2]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[3]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[4]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[5]" at test.vhd(478)
+Info (10041): Inferred latch for "HEX[6]" at test.vhd(478)
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "hexDisp:HE0|HEX[3]" merged with LATCH primitive "hexDisp:HE0|HEX[0]"
@@ -859,8 +859,8 @@ Info (21057): Implemented 187 device resources after synthesis - the final resou
     Info (21059): Implemented 66 output pins
     Info (21061): Implemented 120 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 537 megabytes
-    Info: Processing ended: Mon May 22 13:54:39 2017
+    Info: Peak virtual memory: 533 megabytes
+    Info: Processing ended: Mon May 22 14:32:52 2017
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
