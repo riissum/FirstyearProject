@@ -8,11 +8,13 @@ RES[4] <= RES[4].DB_MAX_OUTPUT_PORT_TYPE
 RES[5] <= RES[5].DB_MAX_OUTPUT_PORT_TYPE
 RES[6] <= RES[6].DB_MAX_OUTPUT_PORT_TYPE
 RES[7] <= RES[7].DB_MAX_OUTPUT_PORT_TYPE
-done <= controlbits:swt.d_sw
+done <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |modExp|controlClk:cntlr
 CLK => CLKf.DATAA
+CLK => done~reg0.CLK
+CLK => CLKf~reg0.CLK
 CLK => i_help[0]~reg0.CLK
 CLK => i_help[1]~reg0.CLK
 CLK => i_help[2]~reg0.CLK
@@ -77,7 +79,6 @@ CLK => i[28]~reg0.CLK
 CLK => i[29]~reg0.CLK
 CLK => i[30]~reg0.CLK
 CLK => i[31]~reg0.CLK
-CLKf <= CLKf.DB_MAX_OUTPUT_PORT_TYPE
 i[0] <> i[0]~reg0
 i[1] <> i[1]~reg0
 i[2] <> i[2]~reg0
@@ -142,7 +143,8 @@ i_help[28] <> i_help[28]~reg0
 i_help[29] <> i_help[29]~reg0
 i_help[30] <> i_help[30]~reg0
 i_help[31] <> i_help[31]~reg0
-done <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+CLKf <= CLKf~reg0.DB_MAX_OUTPUT_PORT_TYPE
+done <= done~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |modExp|controlBits:swt
@@ -180,62 +182,62 @@ i_h[28] => LessThan0.IN36
 i_h[29] => LessThan0.IN35
 i_h[30] => LessThan0.IN34
 i_h[31] => LessThan0.IN33
-i[0] => Equal0.IN31
-i[0] => Equal1.IN31
-i[0] => Equal2.IN31
-i[0] => Equal3.IN31
-i[0] => Equal4.IN31
-i[0] => Equal5.IN31
-i[0] => Equal6.IN31
-i[0] => Equal7.IN31
-i[1] => Equal0.IN30
-i[1] => Equal1.IN30
-i[1] => Equal2.IN30
-i[1] => Equal3.IN30
-i[1] => Equal4.IN30
-i[1] => Equal5.IN30
-i[1] => Equal6.IN30
-i[1] => Equal7.IN30
-i[2] => Equal0.IN29
-i[2] => Equal1.IN29
-i[2] => Equal2.IN29
-i[2] => Equal3.IN29
-i[2] => Equal4.IN29
-i[2] => Equal5.IN29
-i[2] => Equal6.IN29
-i[2] => Equal7.IN29
-i[3] => Equal0.IN28
-i[3] => Equal1.IN28
-i[3] => Equal2.IN28
-i[3] => Equal3.IN28
-i[3] => Equal4.IN28
-i[3] => Equal5.IN28
-i[3] => Equal6.IN28
-i[3] => Equal7.IN28
-i[4] => Equal0.IN27
-i[4] => Equal1.IN27
-i[4] => Equal2.IN26
-i[4] => Equal3.IN27
-i[4] => Equal4.IN26
-i[4] => Equal5.IN27
-i[4] => Equal6.IN25
-i[4] => Equal7.IN27
+i[0] => Equal0.IN30
+i[0] => Equal1.IN30
+i[0] => Equal2.IN29
+i[0] => Equal3.IN30
+i[0] => Equal4.IN29
+i[0] => Equal5.IN29
+i[0] => Equal6.IN28
+i[0] => Equal7.IN30
+i[1] => Equal0.IN29
+i[1] => Equal1.IN29
+i[1] => Equal2.IN28
+i[1] => Equal3.IN29
+i[1] => Equal4.IN28
+i[1] => Equal5.IN28
+i[1] => Equal6.IN27
+i[1] => Equal7.IN29
+i[2] => Equal0.IN28
+i[2] => Equal1.IN28
+i[2] => Equal2.IN27
+i[2] => Equal3.IN28
+i[2] => Equal4.IN27
+i[2] => Equal5.IN27
+i[2] => Equal6.IN26
+i[2] => Equal7.IN28
+i[3] => Equal0.IN27
+i[3] => Equal1.IN27
+i[3] => Equal2.IN26
+i[3] => Equal3.IN27
+i[3] => Equal4.IN26
+i[3] => Equal5.IN26
+i[3] => Equal6.IN25
+i[3] => Equal7.IN27
+i[4] => Equal0.IN31
+i[4] => Equal1.IN26
+i[4] => Equal2.IN31
+i[4] => Equal3.IN26
+i[4] => Equal4.IN31
+i[4] => Equal5.IN25
+i[4] => Equal6.IN31
+i[4] => Equal7.IN26
 i[5] => Equal0.IN26
-i[5] => Equal1.IN26
-i[5] => Equal2.IN27
-i[5] => Equal3.IN26
+i[5] => Equal1.IN31
+i[5] => Equal2.IN30
+i[5] => Equal3.IN25
 i[5] => Equal4.IN25
-i[5] => Equal5.IN25
-i[5] => Equal6.IN27
-i[5] => Equal7.IN26
+i[5] => Equal5.IN31
+i[5] => Equal6.IN30
+i[5] => Equal7.IN25
 i[6] => Equal0.IN25
 i[6] => Equal1.IN25
 i[6] => Equal2.IN25
-i[6] => Equal3.IN25
-i[6] => Equal4.IN27
-i[6] => Equal5.IN26
-i[6] => Equal6.IN26
-i[6] => Equal7.IN25
+i[6] => Equal3.IN31
+i[6] => Equal4.IN30
+i[6] => Equal5.IN30
+i[6] => Equal6.IN29
+i[6] => Equal7.IN24
 i[7] => Equal0.IN24
 i[7] => Equal1.IN24
 i[7] => Equal2.IN24
@@ -243,7 +245,7 @@ i[7] => Equal3.IN24
 i[7] => Equal4.IN24
 i[7] => Equal5.IN24
 i[7] => Equal6.IN24
-i[7] => Equal7.IN24
+i[7] => Equal7.IN31
 i[8] => Equal0.IN23
 i[8] => Equal1.IN23
 i[8] => Equal2.IN23
@@ -1311,6 +1313,10 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 |modExp|directionHandler:dirH
 clk => ~NO_FANOUT~
+f_sw => qy.OUTPUTSELECT
+f_sw => sy.OUTPUTSELECT
+f_sw => qz.OUTPUTSELECT
+f_sw => sz.OUTPUTSELECT
 ry => qy.DATAB
 ry => sy.DATAA
 rz => qz.DATAB
@@ -1319,10 +1325,6 @@ qy <= qy.DB_MAX_OUTPUT_PORT_TYPE
 qz <= qz.DB_MAX_OUTPUT_PORT_TYPE
 sy <= sy.DB_MAX_OUTPUT_PORT_TYPE
 sz <= sz.DB_MAX_OUTPUT_PORT_TYPE
-f_sw => qy.OUTPUTSELECT
-f_sw => sy.OUTPUTSELECT
-f_sw => qz.OUTPUTSELECT
-f_sw => sz.OUTPUTSELECT
 
 
 |modExp|shift_register:z0shift
@@ -1381,35 +1383,6 @@ reg[4] <= shift_reg[4].DB_MAX_OUTPUT_PORT_TYPE
 reg[5] <= shift_reg[5].DB_MAX_OUTPUT_PORT_TYPE
 reg[6] <= shift_reg[6].DB_MAX_OUTPUT_PORT_TYPE
 reg[7] <= shift_reg[7].DB_MAX_OUTPUT_PORT_TYPE
-
-
-|modExp|dubVec:dubZ
-a[0] => b.DATAB
-a[1] => b.DATAB
-a[2] => b.DATAB
-a[3] => b.DATAB
-a[4] => b.DATAB
-a[5] => b.DATAB
-a[6] => b.DATAB
-a[7] => b.DATAB
-b[0] <> b[0]~reg0
-b[1] <> b[1]~reg0
-b[2] <> b[2]~reg0
-b[3] <> b[3]~reg0
-b[4] <> b[4]~reg0
-b[5] <> b[5]~reg0
-b[6] <> b[6]~reg0
-b[7] <> b[7]~reg0
-clk => b[0]~reg0.CLK
-clk => b[1]~reg0.CLK
-clk => b[2]~reg0.CLK
-clk => b[3]~reg0.CLK
-clk => b[4]~reg0.CLK
-clk => b[5]~reg0.CLK
-clk => b[6]~reg0.CLK
-clk => b[7]~reg0.CLK
-condition1 => process_0.IN0
-condition2 => process_0.IN1
 
 
 |modExp|dubVec:dubY

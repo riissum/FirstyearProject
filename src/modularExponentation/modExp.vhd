@@ -12,21 +12,24 @@ ENTITY controlClk IS  -- Controls the clock, and blocks it after 128 cycles.
 END controlClk;
 
 ARCHITECTURE control OF controlClk IS
+   signal internal : integer := 0;
 BEGIN
    PROCESS( CLK, i, i_help ) IS
    BEGIN
-      IF ( i >= 128 ) THEN
-         CLKf <= '0';
-         done <= '1';
-      ELSE
-         CLKf <= CLK;
-         done <= '0';
-      END IF;
       IF ( RISING_EDGE( CLK ) ) THEN
-         i <= i + 1;
+         		
+			i <= i + 1;
          i_help <= i_help + 1;
+			IF ( i >= 129 ) THEN
+            CLKf <= '0';
+            done <= '1';
+         ELSE
+            CLKf <= CLK;
+            done <= '0';
+         END IF;
+			
          
-         IF( i_help = 16 ) THEN
+         IF( i_help = 17 ) THEN
             i_help <= 0;
          END IF;
       END IF;
@@ -73,8 +76,8 @@ BEGIN
                CLK => CLK,
               CLKf => fclk,
                  i => i,
-            i_help => i_h
-             done  => done
+            i_help => i_h--,
+             --done  => done
                );
 -- *** SWITCHES **********************************
 -- Changes controlbits according to cycle no.
@@ -88,7 +91,7 @@ BEGIN
               e_sw => e_sw,
               d_sw => d_sw
                 );
-   
+--done <= '1' AND d_sw;
 -- *** MULTIPLICATORS ***
 -- The two modular multipliers.
    multTop   :   WORK.modMult(modMult8)
@@ -149,25 +152,21 @@ BEGIN
 -- *** DUBLICATIONS ***
 -- (SHOULD) Dublicate the z0 vector into z and y0 into y.
 
-   dubZ   :   WORK.dubVec(conditionalDublicate)
-      PORT MAP (
-                a => z0,
-                b => z,
-                clk => fclk,
-                condition1 => d_sw,            -- Takes d_sw (if at right cycle no).
-                condition2 => '1'              -- And constant true. (AND'ed together)
-                );
+ z <= z0 when i_h = 16 else
+   z when i_h /= 16;
+	
    dubY   :   WORK.dubVec(conditionalDublicate)
-      PORT MAP (
-                a => y0,
-                b => y,
-                clk => fclk,
-                condition1 => d_sw,            -- Takes d_sw (if at right cycle no)
-                condition2 => e_sw             -- And e_sw ( bit at e(n) ) (AND'ed together) 
-                );
-                
-
-        res <= z;                             -- prints out z (for test).
+	   PORT MAP (
+		          a => y0,
+					 b => y,
+				  clk => fclk,
+		 condition1 => d_sw,
+		 condition2 => e_sw
+		          );
+ 
+ done <= '1' when i_h = 16 else
+  '0' when i_h /= 16;
+ res <= y;                             -- prints out z (for test).
 END modExp8;
 
 LIBRARY IEEE;
@@ -450,18 +449,20 @@ ENTITY dubVec IS
          );
 END dubVec;
 
-ARCHITECTURE conditionalDublicate OF dubVec IS
-   SIGNAL   temp   :   STD_LOGIC_VECTOR( 7 DOWNTO 0 );        
+ARCHITECTURE conditionalDublicate OF dubVec IS 
 BEGIN
-   PROCESS(a, b) IS
-   BEGIN
-      temp <= a;                                              -- Stores the a vector in a temporary signal
-      IF ( FALLING_EDGE( clk ) ) THEN                         -- If we are at the falling edge of a cycles 
-         IF ( condition1 = '1' AND condition2 = '1' ) THEN    -- and both conditions hold,
-            b <= temp;                                        -- We send temp to b.
-         END IF;
-      END IF;
-   END PROCESS;
+   PROCESS IS
+	   VARIABLE   temp   :   STD_LOGIC_VECTOR( 7 DOWNTO 0 );
+	BEGIN
+	   WAIT UNTIL RISING_EDGE( clk );
+		   IF( condition1 = '1' AND condition2 = '1' ) THEN
+			   temp := a;
+				b <= temp;
+			ELSE
+			   temp := b;
+				b <= temp;
+			END IF;
+	END PROCESS;
 END conditionalDublicate;
 
 LIBRARY IEEE;
@@ -483,35 +484,35 @@ ARCHITECTURE control OF controlBits IS
 BEGIN
 PROCESS( clk, e, i, i_h ) IS
    BEGIN
-      IF ( i_h < 8 ) THEN
+      IF ( i_h < 9 ) THEN
          f_sw <= '0';
       ELSE
          f_sw <= '1';
       END IF;
       
       IF ( RISING_EDGE( clk ) ) THEN  
-         IF ( i = 15 ) THEN  -- At the end of cycles, we check, if we are at the beginning of any of the 16/16 cycles.
+         IF ( i = 16 ) THEN  -- At the end of cycles, we check, if we are at the beginning of any of the 16/16 cycles.
             d_sw <= '1';                                   -- If so, d-switch is on.
             e_sw <= e(0);                                  -- and e-switch is set to according e(n) bit.
-         ELSIF ( i = 31 ) THEN
+         ELSIF ( i = 32 ) THEN
             d_sw <= '1';
             e_sw <= e(1);
-         ELSIF ( i = 47 ) THEN
+         ELSIF ( i = 48 ) THEN
             d_sw <= '1';
             e_sw <= e(2);
-         ELSIF ( i = 63 ) THEN
+         ELSIF ( i = 64 ) THEN
             d_sw <= '1';
             e_sw <= e(3);
-         ELSIF ( i = 79 ) THEN
+         ELSIF ( i = 80 ) THEN
             d_sw <= '1';
             e_sw <= e(4);
-         ELSIF ( i = 95 ) THEN
+         ELSIF ( i = 96 ) THEN
             d_sw <= '1';
             e_sw <= e(5);
-         ELSIF ( i = 111 ) THEN
+         ELSIF ( i = 112 ) THEN
             d_sw <= '1';
             e_sw <= e(6); 
-         ELSIF ( i = 127 ) THEN
+         ELSIF ( i = 128 ) THEN
             d_sw <= '1';
             e_sw <= e(7);
          ELSE

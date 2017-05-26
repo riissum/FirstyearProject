@@ -198,7 +198,7 @@ USE IEEE.STD_LOGIC_1164.ALL;
                                                                -- ****************************************
 ENTITY ListB IS                                                -- * DECLARINGS                           *
    PORT (                                                      -- ****************************************
-          L      :   IN   STD_LOGIC_VECTOR( 3 DOWNTO 0 );      -- * Takes a list, B from top-level input *
+          L      :   IN    STD_LOGIC_VECTOR( 3 DOWNTO 0 );     -- * Takes a list, B from top-level input *
           bOut   :   OUT   STD_LOGIC;                          -- * Spits out a bit                      *
           clk    :   IN    STD_LOGIC                           -- * Clock                                *
          );                                                    -- ****************************************
