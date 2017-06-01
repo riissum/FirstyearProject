@@ -4,10 +4,10 @@ The project is a work in progress, as from here we have written all this source 
 
 ### The contributors 
 The members of the group 65b project is:
-* Mads Riis Rasmussen   (madsr16@student.sdu.dk)
-* Simon Karing          (sikar16@student.sdu.dk)
-* Mathias Helsengren    (mahel16@student.sdu.dk)
-* Kim Hoand Le          (kile16@student.sdu.dk)
+* Mads Riis Rasmussen   &emsp;(madsr16@student.sdu.dk)
+* Simon Karing          &emsp;(sikar16@student.sdu.dk)
+* Mathias Helsengren    &emsp;(mahel16@student.sdu.dk)
+* Kim Hoand Le          &emsp;(kile16@student.sdu.dk)
 
 ##### Latex Report
 We have a written report of our project at a shared overleaf document
