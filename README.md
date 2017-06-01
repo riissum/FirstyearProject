@@ -14,5 +14,5 @@ We have a written report of our project at a shared overleaf document
 https://www.overleaf.com/9477295jttmtsqhcdpk
 
 ##### Latex Process Analysis
-We also have a written process analysis where we describe the progress of how this project did evolve
+We also have a written mandatory process analysis where we describe how the process of the project went. And how the teamwork of the group layed out.
 https://www.overleaf.com/9724973jvpvfqvjtmft
